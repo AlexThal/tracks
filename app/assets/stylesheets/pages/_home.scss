@@ -1,1 +1,26 @@
 // Specific CSS for your home-page
+.greeting{
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.banner{
+  background-color: #49634C;
+  font-weight: bold;
+}
+
+.app-icon{
+  font-size: 12px;
+  margin: 8px;
+}
+.plus-icon{
+  margin-left: 80%;
+  margin-bottom: 14px;
+  color: #D87142;
+  font-size: 40px;
+  position: fixed;
+  bottom: 0px;
+}
