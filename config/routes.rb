@@ -5,6 +5,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  get "sessions", to: "sessions#index", as: :sessions
-  resources :sessions, only: %i[show]
+  # get "sessions", to: "sessions#index", as: :sessions
+  resources :sessions, only: %i[index show] # do
+  # resources :blocks, only: %i[index] do
+  # resources :sets, only: %i[index]
+  # end
+  # end
 end
