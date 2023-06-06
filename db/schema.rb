@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_05_153218) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_06_135135) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "blocks", force: :cascade do |t|
-    t.bigint "category_id", null: false
+    t.integer "category_id"
     t.bigint "session_id", null: false
     t.string "name"
     t.text "note"
@@ -55,6 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_05_153218) do
     t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "title"
     t.index ["sport_id"], name: "index_sessions_on_sport_id"
     t.index ["user_id"], name: "index_sessions_on_user_id"
   end
