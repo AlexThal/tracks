@@ -1,1 +1,27 @@
 <h1><%= @session.title %></h1>
+<h2><%= @session.sport.name %></h2>
+<ol>
+  <% @blocks.each do |block| %>
+
+    <% sets = block.exercise_sets %>
+    <li><p><%= block.name %> <strong><%= sets.length > 0 ? "x#{sets.length}" : "" %></strong> <%="##{block.category.name}" if block.category%></p></li>
+    <p><%= "Note: #{block.note}" if block.note%></p>
+    <p><%= "Gear: #{block.gear}" if block.gear%></p>
+    <p><%= "Rest between sets: #{block.rest_between_sets}" if block.rest_between_sets%></p>
+    <p><%= "#{block.custom_field}" if block.custom_field%></p>
+
+
+    <% if sets.length > 0 %>
+
+      <% sets.each do |set| %>
+        <%# SETS AND REPS %>
+        <p><%= "#{set.repetitions} x #{set.weight}Kg" if set.repetitions%></p>
+        <%# OTHER STUFF %>
+        <p><%= "Distance: #{set.distance}" if set.distance%></p>
+        <p><%= "#{set.custom_field}" if set.custom_field%></p>
+      <% end %>
+
+    <% end %>
+
+  <% end %>
+</ol>
