@@ -5,8 +5,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-
-
   # adding it separately to update the path helper so it doesn't conflit with devise
   get 'sessions/:id', to: 'exercise_sessions#show', as: 'exercise_session'
 

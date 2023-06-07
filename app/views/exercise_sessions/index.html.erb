@@ -1,11 +1,11 @@
 <h1>View a list with all your sessions here</h1>
 
-<div id="sessions">
-<ol>
+<div>
   <% @sessions.each do |session| %>
-    <%= link_to exercise_session_path(session) do %>
-      <li><%= session.title %></li>
+      <%= link_to exercise_session_path(session) do %>
+        <div id="small_card">
+         <%= image_tag(session.photo, alt: "a nice sports session", class: "image-round") %>
+          <%= session.title %></li>
+        <% end %>
     <% end %>
-  <% end %>
-</ol>
 </div>
