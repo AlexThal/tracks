@@ -1,8 +1,9 @@
-class SessionsController < ApplicationController
+class ExerciseSessionsController < ApplicationController
   before_action :set_session, only: %i[show]
 
   def index
-    @sessions = Session.all
+    @sessions = Session.where("user = ?", current_user)
+    raise
   end
 
   def show
