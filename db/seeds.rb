@@ -19,9 +19,9 @@ Sport.destroy_all
 puts "Creating users"
 
 users = [
-  { username: "Alex", email: "alex@example.com", password: "123456" },
-  { username: "Amanda", email: "amanda@example.com", password: "123456" },
-  { username: "Rodrigo", email: "rodrigo@example.com", password: "123456" }
+  { username: "Alex", email: "alex@example.com", password: "123456", photo: "https://ca.slack-edge.com/T02NE0241-U052U7DHAG0-3906dcde5969-48" },
+  { username: "Amanda", email: "amanda@example.com", password: "123456", photo: "https://ca.slack-edge.com/T02NE0241-U0531H665K8-0ad20ef179f8-72" },
+  { username: "Rodrigo", email: "rodrigo@example.com", password: "123456", photo: "https://ca.slack-edge.com/T02NE0241-U05293W949L-e73882cc8959-48" }
 ]
 
 users.each do |user|
