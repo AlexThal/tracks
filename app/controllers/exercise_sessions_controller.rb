@@ -2,6 +2,7 @@ class ExerciseSessionsController < ApplicationController
   before_action :set_session, only: %i[show]
 
   def index
+    @sessions = Session.all
     @sessions = Session.where("user_id = ?", current_user.id)
   end
 

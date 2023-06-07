@@ -1,11 +1,27 @@
-<h1>View a list with all your sessions here</h1>
+<div class="banner">
+  <i class="app-icon fa-solid fa-bomb">&nbsp;Tracks</i>
+  <br>
+    <div>
+      <h3 class="greeting">&nbsp;Hi Amanda
+      <h4>View a list with all your sessions here</h4>
+          <%# <%= current_user.first_name %>
+          <img class="avatar" src=https://ca.slack-edge.com/T02NE0241-U0531H665K8-0ad20ef179f8-512 alt="YourAvatar">
+      </h3>
+      <br>
+    </div>
+</div>
 
 <div>
   <% @sessions.each do |session| %>
-      <%= link_to exercise_session_path(session) do %>
-        <div id="small_card">
-         <%= image_tag(session.photo, alt: "a nice sports session", class: "image-round") %>
-          <%= session.title %></li>
+    <%= link_to sessions_path(session) do %>
+      <div id="small_card">
+        <% if session.photo %>
+          <%= image_tag(session.photo, alt: "a nice sports session", class: "image-round") %>
+        <% else %>
+          No photo
         <% end %>
+        <%= session.title %>
+      </div>
     <% end %>
+  <% end %>
 </div>
