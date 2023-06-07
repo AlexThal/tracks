@@ -15,21 +15,30 @@
 <div class="container">
 
   <h6 class="header-dash mt-3">Last Sessions</h6>
-      <div id="sessions">
-      <ol>
-        <% @sessions.each do |session| %>
-          <%= link_to exercise_session_path(session) do %>
-            <li><%= session.title %></li>
+  <div class="sessions">
+    <% @sessions.each do |session| %>
+      <%= link_to exercise_session_path(session), class: "session-card" do %>
+          <% if session.photo %>
+            <%= image_tag(session.photo, alt:"photo", class:"image-round")  %>
+          <% else %>
+            No Photo
           <% end %>
-        <% end %>
-      </ol>
-    </div>
-  <i class="fa-regular fa-pen-to-square"></i>
-  <i class="fav-icon fa-regular fa-heart"></i>
-  <hr>
+          <%= session.title %>
+          <div class="session-icon">
+            <i class="fa-regular fa-pen-to-square"></i>
+            <i class="fav-icon fa-regular fa-heart"></i>
+          </div>
+      <% end %>
+    <% end %>
+  </div>
 
   <h6 class="header-dash">Following</h6>
   <i class="fa-regular fa-pen-to-square"></i>
-  <hr>
-<i class="plus-icon fa-solid fa-circle-plus"></i>
+  <i class="fav-icon fa-regular fa-heart"></i>
 </div>
+<i class="plus-icon fa-solid fa-circle-plus"></i>
+
+<%#
+<%= link_to root_path do %>
+  <%# <i class="fa-solid fa-house"></i> %>
+<%# <% end %>
