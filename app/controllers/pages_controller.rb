@@ -3,10 +3,11 @@ class PagesController < ApplicationController
   # skip_before_action :authenticate_user!, only: %i[index show]
 
   def home
+    @session = Session.all
+    
   end
 
   # def dashboard
-  #   @sessions = current_user.sessions
-  #   @sessions = followed_user.sessions
+  #   @session = Session.find(params[:session_id])
   # end
 end

@@ -1,0 +1,13 @@
+input:focus{
+  box-shadow: 0 0 0 0.25rem rgba(245, 188, 89, 0.25) !important;
+  border-color: #E8AA42 !important;
+}
+
+textarea:focus{
+  box-shadow: 0 0 0 0.25rem rgba(245, 188, 89, 0.25) !important;
+  border-color: #E8AA42 !important;
+}
+
+.form-control{
+  border-radius: 8px !important;
+}
