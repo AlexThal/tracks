@@ -7,10 +7,10 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "Cleaning db"
+ExerciseSet.destroy_all
 Block.destroy_all
 Session.destroy_all
 User.destroy_all
-ExerciseSet.destroy_all
 Category.destroy_all
 Sport.destroy_all
 
