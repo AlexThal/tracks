@@ -76,17 +76,17 @@ puts "Creating sessions"
 
 sessions = [
   # Alex
-  { user: alex, title: "Long evening run", sport: running, date: Date.new(2023, 6, 3), comment: "Training for the half marathon! 💪", favourite: false, private: false, photo: "https://images.pexels.com/photos/3763869/pexels-photo-3763869.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
-  { user: alex, title: "Killer swim sesh", sport: swimming, date: Date.new(2023, 6, 5), comment: "Might have pushed it too hard on this one...", favourite: false, private: true, photo: "https://images.pexels.com/photos/863988/pexels-photo-863988.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
+  { user: alex, title: "Evening run", sport: running, date: Date.new(2023, 6, 3), comment: "Training for the half marathon! 💪", favourite: false, private: false, photo: "https://images.pexels.com/photos/3763869/pexels-photo-3763869.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
+  { user: alex, title: "Killer swim", sport: swimming, date: Date.new(2023, 6, 5), comment: "Might have pushed it too hard on this one...", favourite: false, private: true, photo: "https://images.pexels.com/photos/863988/pexels-photo-863988.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
   { user: alex, title: "Morning swim", sport: swimming, date: Date.new(2023, 6, 7), comment: "This one really hit the sweet spot!", favourite: true, private: false, photo: "https://images.pexels.com/photos/1263348/pexels-photo-1263348.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
   # Amanda
-  { user: amanda, title: "Strong gym workout", sport: gym, date: Date.new(2023, 6, 4), comment: "New PR on the deadlift 💪", favourite: true, private: false, photo: "https://images.pexels.com/photos/11266952/pexels-photo-11266952.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
-  { user: amanda, title: "Some Yoga to unwind", sport: yoga, date: Date.new(2023, 6, 5), comment: "Need to recover after that heavy lifting day", favourite: false, private: true },
-  { user: amanda, title: "Mobility at the gym", sport: gym, date: Date.new(2023, 6, 10), comment: "In this session I focused heavily on mobility", favourite: true, private: false, photo: "https://images.pexels.com/photos/3621954/pexels-photo-3621954.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
+  { user: amanda, title: "Gym workout", sport: gym, date: Date.new(2023, 6, 4), comment: "New PR on the deadlift 💪", favourite: true, private: false, photo: "https://images.pexels.com/photos/11266952/pexels-photo-11266952.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
+  { user: amanda, title: "Yoga to unwind", sport: yoga, date: Date.new(2023, 6, 5), comment: "Need to recover after that heavy lifting day", favourite: false, private: true },
+  { user: amanda, title: "Gym mobility", sport: gym, date: Date.new(2023, 6, 10), comment: "In this session I focused heavily on mobility", favourite: true, private: false, photo: "https://images.pexels.com/photos/3621954/pexels-photo-3621954.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
   # Rodrigo
-  { user: rodrigo, title: "Outdoor boulder sesh", sport: climbing, date: Date.new(2023, 6, 4), comment: "Good to be out on a sunny day", favourite: true, private: false },
+  { user: rodrigo, title: "Boulder sesh", sport: climbing, date: Date.new(2023, 6, 4), comment: "Good to be out on a sunny day", favourite: true, private: false },
   { user: rodrigo, title: "Back to the gym", sport: gym, date: Date.new(2023, 6, 5), comment: "First day back after a long break", favourite: false, private: true },
-  { user: rodrigo, title: "Short 5k run", sport: running, date: Date.new(2023, 6, 9), comment: "Training for that sub 20min 5k", favourite: true, private: false, photo: "https://images.pexels.com/photos/3764011/pexels-photo-3764011.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" }
+  { user: rodrigo, title: "5k run", sport: running, date: Date.new(2023, 6, 9), comment: "Training for that sub 20min 5k", favourite: true, private: false, photo: "https://images.pexels.com/photos/3764011/pexels-photo-3764011.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" }
 ]
 
 sessions.each do |session|
