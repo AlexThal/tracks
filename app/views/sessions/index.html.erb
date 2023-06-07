@@ -3,7 +3,9 @@
 <div id="sessions">
 <ol>
   <% @sessions.each do |session| %>
-    <li><%= session.title %></li>
+    <%= link_to exercise_session_path(session) do %>
+      <li><%= session.title %></li>
+    <% end %>
   <% end %>
 </ol>
 </div>
