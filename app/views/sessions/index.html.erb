@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="banner">
   <i class="app-icon fa-solid fa-bomb">&nbsp;Tracks</i>
   <br>
@@ -11,3 +12,16 @@
     </div>
 </div>
 
+=======
+<h1>View a list with all your sessions here</h1>
+
+<div id="sessions">
+<ol>
+  <% @sessions.each do |session| %>
+    <%= link_to exercise_session_path(session) do %>
+      <li><%= session.title %></li>
+    <% end %>
+  <% end %>
+</ol>
+</div>
+>>>>>>> master
