@@ -2,8 +2,7 @@ class ExerciseSessionsController < ApplicationController
   before_action :set_session, only: %i[show]
 
   def index
-    @sessions = Session.where("user = ?", current_user)
-    raise
+    @sessions = Session.where("user_id = ?", current_user.id)
   end
 
   def show
@@ -12,6 +11,6 @@ class ExerciseSessionsController < ApplicationController
   private
 
   def set_session
-    @session = Session.find(params[:session_id])
+    @session = Session.find(params[:id])
   end
 end
