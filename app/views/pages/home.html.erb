@@ -10,11 +10,21 @@
     </div>
 </div>
 <div class="container">
-  <h6 class="header-dash">Last Sessions</h6>
+  <h6 class="header-dash mt-3">Last Sessions</h6>
+
+    <div id="sessions">
+      <ol>
+        <% @sessions.each do |session| %>
+          <%= link_to exercise_session_path(session) do %>
+            <li><%= session.title %></li>
+          <% end %>
+        <% end %>
+      </ol>
+    </div>
 
   <hr>
 
-  <h6 class="header-dash">Following</h6>
+  <h6 class="header-dash mt-3">Following</h6>
 
 <i class="plus-icon fa-solid fa-circle-plus"></i>
 </div>
