@@ -1,27 +1,31 @@
 <div class="banner">
-  <i class="app-icon fa-solid fa-bomb">&nbsp;Tracks</i>
+  <div class="d-flex justify-content-between">
+    <i class="app-icon fa-solid fa-bomb">&nbsp;Tracks</i>
+  </div>
   <br>
     <div>
-      <h3 class="greeting">&nbsp;Hi Amanda
-      <h4>View a list with all your sessions here</h4>
-          <%# <%= current_user.first_name %>
+      <h3 class="greeting">Hi&nbsp;<%= current_user.username %>
           <img class="avatar" src=https://ca.slack-edge.com/T02NE0241-U0531H665K8-0ad20ef179f8-512 alt="YourAvatar">
       </h3>
       <br>
     </div>
 </div>
 
-<div>
-  <% @sessions.each do |session| %>
-    <%= link_to sessions_path(session) do %>
-      <div id="small_card">
+<div class="container">
+  <div class="sessions">
+    <% @sessions.each do |session| %>
+      <%= link_to sessions_path(session), class: "session-card"  do %>
         <% if session.photo %>
-          <%= image_tag(session.photo, alt: "a nice sports session", class: "image-round") %>
+          <%= image_tag(session.photo, alt:"a nice sports session", class: "image-round") %>
         <% else %>
-          No photo
+          <p class="image-placeholder"></p>
         <% end %>
         <%= session.title %>
-      </div>
+        <div class="session-icon">
+            <i class="fa-regular fa-pen-to-square"></i>
+            <i class="fav-icon fa-regular fa-heart"></i>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
