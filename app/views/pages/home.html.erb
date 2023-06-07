@@ -5,16 +5,14 @@
   </div>
   <br>
   <div>
-    <h3 class="greeting">&nbsp;Hi Amanda
-        <%# <%= current_user.first_name %>
+    <h3 class="greeting">Hi&nbsp;<%= current_user.username %>
         <img class="avatar" src=https://ca.slack-edge.com/T02NE0241-U0531H665K8-0ad20ef179f8-512 alt="YourAvatar">
     </h3>
     <br>
   </div>
 </div>
 <div class="container">
-
-  <h6 class="header-dash mt-3">Last Sessions</h6>
+  <h6 class="header-home mt-3">Last Sessions</h6>
   <div class="sessions">
     <% @sessions.each do |session| %>
       <%= link_to exercise_session_path(session), class: "session-card" do %>
@@ -32,7 +30,7 @@
     <% end %>
   </div>
 
-  <h6 class="header-dash">Following</h6>
+  <h6 class="header-home">Following</h6>
   <i class="fa-regular fa-pen-to-square"></i>
   <i class="fav-icon fa-regular fa-heart"></i>
 </div>
