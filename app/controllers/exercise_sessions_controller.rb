@@ -6,6 +6,7 @@ class ExerciseSessionsController < ApplicationController
   end
 
   def show
+    @blocks = @session.blocks
   end
 
   private
