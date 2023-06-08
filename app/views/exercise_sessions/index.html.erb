@@ -14,7 +14,7 @@
 <div class="container">
   <div class="sessions">
     <% @sessions.each do |session| %>
-      <%= link_to sessions_path(session), class: "session-card"  do %>
+      <%= link_to exercise_session_path(session), class: "session-card"  do %>
         <% if session.photo %>
           <%= image_tag(session.photo, alt:"a nice sports session", class: "image-round") %>
         <% else %>

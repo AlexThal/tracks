@@ -1,0 +1,12 @@
+<%= simple_form_for @session do |f| %>
+  <%= f.input :title %>
+  <%= f.input :date %>
+  <%#= f.label :sport %>
+  <%#= f.text_field :sport %>
+  <%#= <label for="sports">Choose a Sport:</label> %>
+  <%= f.association :sport, required: false %>
+
+  <%= label_tag("Sport not there? write it here") %>
+  <%= text_field_tag(:sport_input, '', class: "form-control string optional") %>
+  <%= f.submit "new session" %>
+<% end %>
