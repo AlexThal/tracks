@@ -45,6 +45,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_152650) do
     t.index ["block_id"], name: "index_exercise_sets_on_block_id"
   end
 
+  create_table "friendships", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "friend_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["friend_id"], name: "index_friendships_on_friend_id"
+    t.index ["user_id"], name: "index_friendships_on_user_id"
+  end
+
   create_table "sessions", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "sport_id", null: false
@@ -83,6 +92,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_152650) do
   add_foreign_key "blocks", "categories"
   add_foreign_key "blocks", "sessions"
   add_foreign_key "exercise_sets", "blocks"
+  add_foreign_key "friendships", "users"
+  add_foreign_key "friendships", "users", column: "friend_id"
   add_foreign_key "sessions", "sports"
   add_foreign_key "sessions", "users"
 end
