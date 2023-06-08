@@ -2,8 +2,9 @@ class ExerciseSessionsController < ApplicationController
   before_action :set_session, only: %i[show create destroy]
 
   def index
-    @sessions = Session.all
-    @sessions = Session.where("user_id = ?", current_user.id)
+    @sessions = current_user.sessions
+    # @suggested_friends = User.where.not(id: current_user.id)
+    @friends_sessions = Session.where(user: current_user.friends)
   end
 
   def new
