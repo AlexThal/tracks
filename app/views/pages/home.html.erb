@@ -1,17 +1,18 @@
 
 <div class="home-wrapper d-flex flex-column">
   <div class="banner">
-    <div class="d-flex justify-content-between">
-      <i class="app-icon fa-solid fa-bomb">&nbsp;Tracks</i>
-    </div>
+      <div class="d-flex justify-content-between">
+        <i class="app-icon fa-solid fa-bomb">&nbsp;Tracks</i>
+      </div>
     <br>
-    <div>
-      <h3 class="greeting"> Hi&nbsp;<%= current_user.username %>
-          <img class="avatar" src=https://ca.slack-edge.com/T02NE0241-U0531H665K8-0ad20ef179f8-512 alt="YourAvatar">
-      </h3>
-      <br>
-    </div>
+      <div>
+        <h3 class="greeting"> Hi&nbsp;<%= current_user.username %>
+            <img class="avatar" src=https://ca.slack-edge.com/T02NE0241-U0531H665K8-0ad20ef179f8-512 alt="YourAvatar">
+        </h3>
+        <br>
+      </div>
   </div>
+
   <div class="container">
     <h6 class="header-home mt-3">Latest Sessions</h6>
     <div class="sessions">
@@ -20,7 +21,7 @@
             <% if session.photo %>
               <%= image_tag(session.photo, alt:"photo", class:"image-round")  %>
             <% else %>
-              <img class="image-round" src="https://787sports.co.uk/wp-content/uploads/2019/02/fotolia_190038155.jpg" alt="bla">
+              <img class="image-round" src="https://787sports.co.uk/wp-content/uploads/2019/02/fotolia_190038155.jpg" alt="default image">
             <% end %>
             <span><%= session.title %></span>
             <div class="session-icon">
@@ -30,14 +31,32 @@
         <% end %>
       <% end %>
     </div>
-    <h6 class="header-home">Friends</h6>
+    <h6 class="header-home">Friend suggestions</h6>
     <div class="sessions">
-      <% @following_sessions.each do |session| %>
+      <% @suggested_friends.each do |user| %>
+        <%= link_to friendships_path(user), class: "session-card", data: { turbo_method: "post" } do %>
+            <% if user.photo %>
+              <%= image_tag(user.photo, alt:"photo", class:"image-round-small")  %>
+            <% else %>
+              <img class="image-round-small" src="https://787sports.co.uk/wp-content/uploads/2019/02/fotolia_190038155.jpg" alt="default image">
+            <% end %>
+            <span><%= user.username %></span>
+            <div class="session-icon">
+              <i class="fa-solid fa-user-plus"></i>
+              <i class="fa-solid fa-user-minus"></i>
+            </div>
+        <% end %>
+      <% end %>
+      <%= render 'shared/flashes' %>
+    </div>
+    <h6 class="header-home"> Friends sessions</h6>
+    <div class="sessions">
+      <% @friends_sessions.each do |session| %>
         <%= link_to exercise_session_path(session), class: "session-card" do %>
             <% if session.photo %>
               <%= image_tag(session.photo, alt:"photo", class:"image-round")  %>
             <% else %>
-              <img class="image-round" src="https://787sports.co.uk/wp-content/uploads/2019/02/fotolia_190038155.jpg" alt="bla">
+              <img class="image-round" src="https://787sports.co.uk/wp-content/uploads/2019/02/fotolia_190038155.jpg" alt="default image">
             <% end %>
             <span><%= session.title %></span>
             <div class="session-icon">
@@ -47,12 +66,11 @@
         <% end %>
       <% end %>
     </div>
-  </div>
-  <div class="bottom-icon">
-    <%= link_to new_user_session_path do %>
-    <i class="plus-icon fa-solid fa-circle-plus"></i>
-    <% end %>
-  </div>
+    <div class="bottom-icon">
+      <%= link_to new_user_session_path do %>
+        <i class="plus-icon fa-solid fa-circle-plus"></i>
+      <% end %>
+    </div>
 </div>
 
   <%# <%= render "shared/modal" %>
