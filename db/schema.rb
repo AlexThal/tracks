@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_07_080902) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_08_093554) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -43,6 +43,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_080902) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["block_id"], name: "index_exercise_sets_on_block_id"
+  end
+
+  create_table "friendships", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "friend_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["friend_id"], name: "index_friendships_on_friend_id"
+    t.index ["user_id"], name: "index_friendships_on_user_id"
   end
 
   create_table "sessions", force: :cascade do |t|
@@ -82,6 +91,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_07_080902) do
   add_foreign_key "blocks", "categories"
   add_foreign_key "blocks", "sessions"
   add_foreign_key "exercise_sets", "blocks"
+  add_foreign_key "friendships", "users"
+  add_foreign_key "friendships", "users", column: "friend_id"
   add_foreign_key "sessions", "sports"
   add_foreign_key "sessions", "users"
 end

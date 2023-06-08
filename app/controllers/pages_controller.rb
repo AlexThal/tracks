@@ -3,10 +3,8 @@ class PagesController < ApplicationController
   # skip_before_action :authenticate_user!, only: %i[index show]
 
   def home
-    @sessions = Session.where("user_id = ?", current_user.id).first(3)
+    # @sessions = Session.all
+    @sessions = current_user.sessions.first(3)
+    @following_sessions = Session.where(user: current_user.friends)
   end
-
-  # def dashboard
-  #   @session = Session.find(params[:session_id])
-  # end
 end

@@ -7,4 +7,7 @@ class User < ApplicationRecord
 
   has_many :sessions
   has_many :sports, through: :sessions
+
+  has_many :friendships
+  has_many :friends, through: :friendships, foreign_key: "friend_id"
 end

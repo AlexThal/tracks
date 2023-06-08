@@ -1,43 +1,57 @@
-<div class="banner">
-  <div class="d-flex justify-content-between">
-    <i class="app-icon fa-solid fa-bomb">&nbsp;Tracks</i>
-    <i class="login fa-solid fa-arrow-right-to-bracket"></i>
-  </div>
-  <br>
-  <div>
-    <h3 class="greeting"> Hi&nbsp;<%= current_user.username %>
-        <img class="avatar" src=https://ca.slack-edge.com/T02NE0241-U0531H665K8-0ad20ef179f8-512 alt="YourAvatar">
-    </h3>
+<div class="home-wrapper d-flex flex-column">
+  <div class="banner">
+    <div class="d-flex justify-content-between">
+      <i class="app-icon fa-solid fa-bomb">&nbsp;Tracks</i>
+    </div>
     <br>
+    <div>
+      <h3 class="greeting"> Hi&nbsp;<%= current_user.username %>
+          <img class="avatar" src=https://ca.slack-edge.com/T02NE0241-U0531H665K8-0ad20ef179f8-512 alt="YourAvatar">
+      </h3>
+      <br>
+    </div>
   </div>
-</div>
-
-<div class="container">
-  <h6 class="header-dash mt-3">Last Sessions</h6>
-  <div class="sessions">
-    <% @sessions.each do |session| %>
-      <%= link_to exercise_session_path(session), class: "session-card" do %>
-          <% if session.photo %>
-            <%= image_tag(session.photo, alt:"photo", class:"image-round")  %>
-          <% else %>
-           <p class="image-placeholder"></p>
-          <% end %>
-          <%= session.title %>
-          <div class="session-icon">
-            <i class="fa-regular fa-pen-to-square"></i>
-            <i class="fav-icon fa-regular fa-heart"></i>
-          </div>
+  <div class="container">
+    <h6 class="header-home mt-3">Latest Sessions</h6>
+    <div class="sessions">
+      <% @sessions.each do |session| %>
+        <%= link_to exercise_session_path(session), class: "session-card" do %>
+            <% if session.photo %>
+              <%= image_tag(session.photo, alt:"photo", class:"image-round")  %>
+            <% else %>
+              <img class="image-round" src="https://787sports.co.uk/wp-content/uploads/2019/02/fotolia_190038155.jpg" alt="bla">
+            <% end %>
+            <span><%= session.title %></span>
+            <div class="session-icon">
+              <i class="fa-regular fa-pen-to-square"></i>
+              <i class="fav-icon fa-regular fa-heart"></i>
+            </div>
+        <% end %>
       <% end %>
+    </div>
+    <h6 class="header-home">Friends</h6>
+    <div class="sessions">
+      <% @following_sessions.each do |session| %>
+        <%= link_to exercise_session_path(session), class: "session-card" do %>
+            <% if session.photo %>
+              <%= image_tag(session.photo, alt:"photo", class:"image-round")  %>
+            <% else %>
+              <img class="image-round" src="https://787sports.co.uk/wp-content/uploads/2019/02/fotolia_190038155.jpg" alt="bla">
+            <% end %>
+            <span><%= session.title %></span>
+            <div class="session-icon">
+              <i class="fa-regular fa-pen-to-square"></i>
+              <i class="fav-icon fa-regular fa-heart"></i>
+            </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="bottom-icon">
+    <%= link_to new_user_session_path do %>
+    <i class="plus-icon fa-solid fa-circle-plus"></i>
     <% end %>
   </div>
-
-  <h6 class="header-home">Following</h6>
-  <i class="fa-regular fa-pen-to-square"></i>
-  <i class="fav-icon fa-regular fa-heart"></i>
 </div>
-<i class="plus-icon fa-solid fa-circle-plus"></i>
 
-<%#
-<%= link_to root_path do %>
-  <%# <i class="fa-solid fa-house"></i> %>
-<%# <% end %>
+  <%# <%= render "shared/modal" %>
