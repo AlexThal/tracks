@@ -13,6 +13,7 @@ class ExerciseSetsController < ApplicationController
 
   def destroy
     @set = ExerciseSet.find(params[:id])
+    @session = @set.block.session
     @set.destroy
     redirect_to exercise_session_path(@session), status: :see_other
   end
