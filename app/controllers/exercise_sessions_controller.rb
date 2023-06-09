@@ -1,9 +1,10 @@
 class ExerciseSessionsController < ApplicationController
-  before_action :set_session, only: %i[show create destroy]
+  before_action :set_session, only: %i[show destroy]
 
   def index
-    @sessions = Session.all
-    @sessions = Session.where("user_id = ?", current_user.id)
+    @sessions = current_user.sessions
+    # @suggested_friends = User.where.not(id: current_user.id)
+    @friends_sessions = Session.where(user: current_user.friends)
   end
 
   def new
@@ -13,14 +14,19 @@ class ExerciseSessionsController < ApplicationController
   def create
     @session = Session.new(session_params)
     @session.user = current_user
+
     if params[:session][:sport_id].nil?
       @sport = Sport.create(name: params[:sport_input])
     else
       @sport = Sport.find(params[:session][:sport_id])
     end
     @session.sport = @sport
-    @session.save
-    redirect_to session_path(@session)
+
+    if @session.save
+      redirect_to exercise_session_path(@session)
+    else
+      render "exercise_sessions/show", status: :unprocessable_entity
+    end
   end
 
   def show
@@ -41,6 +47,6 @@ class ExerciseSessionsController < ApplicationController
   end
 
   def session_params
-    params.require(:session).permit(:title, :date)
+    params.require(:session).permit(:title, :date, :sport)
   end
 end
