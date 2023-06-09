@@ -7,7 +7,7 @@
     <br>
       <div>
         <h3 class="greeting"> Hi&nbsp;<%= current_user.username %>
-            <img class="avatar" src=https://ca.slack-edge.com/T02NE0241-U0531H665K8-0ad20ef179f8-512 alt="YourAvatar">
+            <%= image_tag(current_user.photo, alt:"Your avatar", class:"avatar") %>
         </h3>
         <br>
       </div>
