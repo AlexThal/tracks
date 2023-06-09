@@ -25,8 +25,7 @@ class ExerciseSessionsController < ApplicationController
     if @session.save
       redirect_to exercise_session_path(@session)
     else
-      raise
-      # render "exercise_sessions/show", status: :unprocessable_entity
+      render "exercise_sessions/show", status: :unprocessable_entity
     end
   end
 
