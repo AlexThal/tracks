@@ -29,9 +29,6 @@ class ExerciseSessionsController < ApplicationController
     @set = ExerciseSet.new
   end
 
-  def create
-  end
-
   def destroy
     @session.destroy
     redirect_to root_path, status: :see_other
