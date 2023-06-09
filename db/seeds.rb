@@ -99,7 +99,7 @@ puts "Creating blocks"
 
 blocks = [
   # Alex's Long Evening Run
-  { session: Session.all[0], category: cardio, name: "Zone 2 Running", custom_field: '"terrain":"gravel"' },
+  { session: Session.all[0], category: cardio, name: "Zone 2 Running", custom_field: { terrain: "20min" } },
   { session: Session.all[0], category: mobility, name: "Stretching" },
   # Alex's Killer Swim Sesh
   { session: Session.all[1], category: cardio, name: "Backstroke" },
@@ -122,12 +122,12 @@ blocks = [
   { session: Session.all[5], category: mobility, name: "Kettlebell Flow" },
   { session: Session.all[5], category: mobility, name: "Single Leg Kettlebel Deadlift" },
   { session: Session.all[5], category: strength, name: "Cossack Squats" },
-  { session: Session.all[5], category: cardio, name: "Rowing Machine", custom_field: '"duration":"45min"' },
+  { session: Session.all[5], category: cardio, name: "Rowing Machine", custom_field: { duration: "10min" } },
 
   # Rodrigo's Outdoor Bolder Sesh
-  { session: Session.all[6], name: "Limit Bouldering", custom_field: '"duration":"20min"' },
-  { session: Session.all[6], name: "Overhangs", custom_field: '"duration":"30min"'},
-  { session: Session.all[6], name: "Slabs", custom_field: '"duration":"30min"' },
+  { session: Session.all[6], name: "Limit Bouldering", custom_field: { duration: "20min" } },
+  { session: Session.all[6], name: "Overhangs", custom_field: { duration: "30min" }},
+  { session: Session.all[6], name: "Slabs", custom_field: { duration: "30min" } },
   { session: Session.all[6], category: mobility, name: "Stretching" },
   # Rodrigo's Back to the Gym Sesh
   { session: Session.all[7], category: mobility, name: "Kettlebell Warmup" },
@@ -135,8 +135,8 @@ blocks = [
   { session: Session.all[7], category: strength, name: "Pullups" },
   { session: Session.all[7], category: cardio, name: "Sprints" },
   # Rodrigo's 5k Run
-  { session: Session.all[8], category: cardio, name: "Fast Running", custom_field: '"duration":"20min"' },
-  { session: Session.all[8], category: cardio, name: "Cooldown", custom_field: '"duration":"5min"' }
+  { session: Session.all[8], category: cardio, name: "Fast Running", custom_field: { duration: "20min" } },
+  { session: Session.all[8], category: cardio, name: "Cooldown", custom_field: { duration: "5min" } }
 ]
 
 blocks.each do |block|
@@ -149,11 +149,11 @@ puts "Creating Exercise Sets"
 exercise_sets = [
   # Alex's Long Evening Run
   # 0 Zone 2 Running
-  { block: Block.all[0], distance: "8.5km", custom_field: '"duration":"45min"' },
+  { block: Block.all[0], distance: "8.5km", custom_field: { duration: "45min" } },
   # 1 Stretching
-  { block: Block.all[1], custom_field: '"Forward Fold":"5 breaths", "Butterfly":"5 breaths", "Down-dog":"5 breaths"' },
-  { block: Block.all[1], custom_field: '"Forward Fold":"5 breaths", "Butterfly":"5 breaths", "Down-dog":"5 breaths"' },
-  { block: Block.all[1], custom_field: '"Forward Fold":"10 breaths", "Pigeon Pose":"10 breaths"' },
+  { block: Block.all[1], custom_field: { "Forward Fold" => "5 breaths", "Butterfly" => "5 breaths", "Down-dog" => "5 breaths" } },
+  { block: Block.all[1], custom_field: { "Forward Fold" => "5 breaths", "Down-dog" => "5 breaths", "Dophin" => "5 breaths" } },
+  { block: Block.all[1], custom_field: { "Forward Fold" => "10 breaths", "Pigeon Pose" => "5 breaths" } },
   # Alex's Killer Swim
   # 2 Backstroke
   { block: Block.all[2], distance: "100m" },
@@ -197,9 +197,9 @@ exercise_sets = [
   { block: Block.all[10], repetitions: "10", weight: "60" },
   # Amanda's Yoga Session
   # 11 Sun Salutations
-  { block: Block.all[11], custom_field: '"duration":"5 breaths"' },
-  { block: Block.all[11], custom_field: '"duration":"5 breaths"' },
-  { block: Block.all[11], custom_field: '"duration":"5 breaths"' },
+  { block: Block.all[11], custom_field: { duration: "5 breaths" } },
+  { block: Block.all[11], custom_field: { duration: "5 breaths" } },
+  { block: Block.all[11], custom_field: { duration: "5 breaths" } },
   # 12 Hip Openers
   { block: Block.all[12] },
   # 13 Heart Opening
@@ -221,9 +221,9 @@ exercise_sets = [
   # 19 Overhangs
   # 20 Slabs
   # 21 Stretching
-  { block: Block.all[21], custom_field: '"Forward Fold":"5 breaths", "Butterfly":"5 breaths", "Down-dog":"5 breaths"' },
-  { block: Block.all[21], custom_field: '"Forward Fold":"5 breaths", "Butterfly":"5 breaths", "Down-dog":"5 breaths"' },
-  { block: Block.all[21], custom_field: '"Forward Fold":"10 breaths", "Pigeon Pose":"10 breaths"' },
+  { block: Block.all[21], custom_field: { "Forward Fold" => "5 breaths", "Butterfly" => "5 breaths", "Down-dog" => "5 breaths" } },
+  { block: Block.all[21], custom_field: { "Forward Fold" => "5 breaths", "Down-dog" => "5 breaths", "Dophin" => "5 breaths" } },
+  { block: Block.all[21], custom_field: { "Forward Fold" => "10 breaths", "Pigeon Pose" => "5 breaths" } },
   # Rodrigo's Back to the Gym Sesh
   # 22 Kettlebell Warmup
   # 23 Barbell Squats

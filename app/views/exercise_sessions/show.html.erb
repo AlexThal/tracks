@@ -3,19 +3,7 @@
 <ol class = "block-container">
   <%= render "partials/block_card" %>
 </ol>
-
-<%# NEW BLOCK %>
-<div class="block-card">
-  <p><strong>New Block</strong></p>
-  <%= simple_form_for([@session, @block]) do |f| %>
-    <%= f.input :name, required: true %>
-    <%= f.input :note %>
-    <%= f.input :gear %>
-    <%= f.input :rest_between_sets %>
-    <%= f.input :custom_field %>
-    <%= f.submit 'Save', class: 'btn-main form-actions' %>
-  <% end %>
-</div>
+<%= render "partials/new_block_card" %>
 <%= link_to :back do %>
   <i class="fa-solid fa-angle-left"></i>
 <% end %>

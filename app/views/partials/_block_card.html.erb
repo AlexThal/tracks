@@ -5,64 +5,98 @@
 
     <%# HEADER %>
     <div class = "block-header">
-      <li><%= block.name %> <%="##{block.category.name}" if block.category%></li>
+      <li><%= block.name %></li>
+      <p class="category"><%="##{block.category.name}" if block.category%></p>
     </div>
 
     <%# SETS AND REPS %>
     <% if sets.length > 0 %>
-      <p class = "block-sets-reps"><strong><%= "#{sets.length} x #{
-        repetitions = sets.map { |set| set.repetitions }
-        if repetitions.uniq.size <= 1
-          repetitions[0]
-        else
-          repetitions.join("/")
-        end
-      }" %></strong><i class="fa-solid fa-angle-down"></i></p>
+    <button class="btn btn-outline-dark mt-2 mb-2 dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample<%=block.id%>" aria-expanded="false" aria-controls="collapseExample">
+        <strong><%= "#{sets.length} x #{
+          repetitions = sets.map { |set| set.repetitions }
+          if repetitions.uniq.size <= 1
+            repetitions[0]
+          else
+            repetitions.join("/")
+          end
+        }" %></strong></i>
+    </button>
 
       <%# EXTENDED VIEW %>
-      <hr style="width:100%;text-align:left;margin-left:0">
+      <div class="collapse" id="collapseExample<%=block.id%>">
+        <hr style="width:100%;text-align:left;margin-left:0">
 
 
-      <% sets.reverse.each do |set| %>
-        <%# SETS AND REPS %>
-        <p><%= "#{set.repetitions} x #{set.weight}Kg" if set.repetitions%></p>
-        <%# EXTRA SET FIELDS %>
-        <p><%= "Distance: #{set.distance}" if set.distance =! "" %></p>
-        <p><%= "#{set.custom_field}" if set.custom_field%></p>
-        <p>
-          <%= link_to exercise_set_path(set),class: "btn-delete", data: { turbo_method: "delete", turbo_confirm: "Are you sure?" } do %>
-            <i class="fa-solid fa-trash-can"></i>
-          <% end %>
-        </p>
-      <% end %>
+        <% sets.reverse.each do |set| %>
+        <%# SET DETAILS %>
+          <div class="set-info">
+            <div class="extra-set-fields">
+            <%# SETS AND REPS %>
+            <% if set.repetitions %>
+              <p><%= "#{set.repetitions} x #{set.weight}Kg" if set.repetitions%></p>
+            <% end %>
+            <%# EXTRA SET FIELDS %>
+            <% if set.distance =! ""  %>
+            <p><%= "Distance: #{set.distance}"%></p>
+            <% end %>
+            <% if set.custom_field %>
+              <% set.custom_field.each do |key, value| %>
+                <p><%= key.capitalize %>: <%= value %></p>
+              <% end %>
+            <% end %>
+            </div>
+              <%= link_to exercise_set_path(set),class: "btn-delete", data: { turbo_method: "delete", turbo_confirm: "Are you sure?" } do %>
+                <i class="fa-solid fa-circle-minus"></i>
+              <% end %>
+          </div>
+        <% end %>
 
-      <p><strong>Add Set</strong></p>
-      <%= simple_form_for(@set) do |f| %>
-          <%= f.hidden_field :block_id, { value: block.id }  %>
-          <%= f.input :distance%>
-          <%= f.input :weight %>
-          <%= f.input :repetitions %>
-          <%= f.submit 'Save', class: 'btn-main form-actions' %>
-      <% end %>
+        <%# ADD SET %>
+        <button type="button" class="btn btn-outline-dark" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+         <i class="fa-solid fa-circle-plus"></i> Set
+        </button>
+        <%= simple_form_for @set, html: { class: "dropdown-menu p-4"} do |f| %>
+            <%= f.hidden_field :block_id, { value: block.id }  %>
+            <%= f.input :repetitions %>
+            <%= f.input :weight %>
+            <%= f.input :custom_field%>
+            <%= f.submit 'Save', class: 'btn-main form-actions' %>
+        <% end %>
 
-      <hr style="width:100%;text-align:left;margin-left:0">
+        <hr style="width:100%;text-align:left;margin-left:0">
+      </div>
 
     <% end %>
 
-    <%# EXTRA BLOCK FIELDS %>
-    <p><%= "Note: #{block.note}" if block.note%></p>
-    <p><%= "Gear: #{block.gear}" if block.gear%></p>
-    <p><%= "Rest between sets: #{block.rest_between_sets}" if block.rest_between_sets%></p>
-    <p><%= "#{block.custom_field}" if block.custom_field%></p>
-
-    <%# EDIT AND DESTROY BLOCK%>
-    <% if current_user == @session.user %>
-      <div class="d-flex align-items-center">
-        <%= link_to session_block_path(@session, block.id),class: "btn-delete", data: { turbo_method: "delete", turbo_confirm: "Are you sure?" } do %>
-          <i class="fa-solid fa-trash-can"></i>
+    <div class="block-info">
+      <%# EXTRA BLOCK FIELDS %>
+      <div class="extra-block-fields">
+        <%# NOTE %>
+        <% if block.note %>
+          <p><i class="fa-solid fa-note-sticky"></i><%=block.note%></p>
+        <% end %>
+        <%# GEAR %>
+        <% if block.gear %>
+          <p><i class="fa-solid fa-gear"></i></i> <%= block.gear%></p>
+        <% end %>
+        <%# REST BETWEEN SETS %>
+        <% if block.rest_between_sets %>
+          <p><i class="fa-solid fa-stopwatch"></i> <%= block.rest_between_sets%></p>
+        <% end %>
+        <% if block.custom_field %>
+          <% block.custom_field.each do |key, value| %>
+            <p><%= key.capitalize %>: <%= value %></p>
+          <% end %>
         <% end %>
       </div>
-    <% end %>
+
+      <%# EDIT AND DESTROY BLOCK%>
+      <% if current_user == @session.user %>
+          <%= link_to session_block_path(@session, block.id),class: "btn-delete", data: { turbo_method: "delete", turbo_confirm: "Are you sure?" } do %>
+            <i class="fa-solid fa-trash-can"></i>
+          <% end %>
+      <% end %>
+    </div>
 
   </div>
   <%# END OF BLOCK CARD %>
