@@ -7,7 +7,7 @@
     <br>
       <div>
         <h3 class="greeting"> Hi&nbsp;<%= current_user.username %>
-            <img class="avatar" src=https://ca.slack-edge.com/T02NE0241-U0531H665K8-0ad20ef179f8-512 alt="YourAvatar">
+        <%= image_tag(current_user.photo, alt:"Your avatar", class:"avatar")  %>
         </h3>
         <br>
       </div>
@@ -59,7 +59,7 @@
             <% else %>
               <img class="image-round-small" src="https://787sports.co.uk/wp-content/uploads/2019/02/fotolia_190038155.jpg" alt="default image">
             <% end %>
-            <span><%= user.username %></span>
+            <span>Follow <%=user.username %></span>
         <% end %>
       <% end %>
       <%= render 'shared/flashes' %>
