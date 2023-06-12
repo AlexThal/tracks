@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import CustomFieldController from "./custom_field_controller"
+application.register("custom-field", CustomFieldController)
+
 import FlashController from "./flash_controller"
 application.register("flash", FlashController)
 
