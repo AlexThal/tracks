@@ -1,5 +1,5 @@
 class ExerciseSessionsController < ApplicationController
-  before_action :set_session, only: %i[show destroy]
+  before_action :set_session, only: %i[show destroy copy_session]
 
   def index
     @sessions = current_user.sessions
@@ -38,6 +38,10 @@ class ExerciseSessionsController < ApplicationController
   def destroy
     @session.destroy
     redirect_to root_path, status: :see_other
+  end
+
+  def copy_session
+    @copy_session = @session.dup
   end
 
   private
