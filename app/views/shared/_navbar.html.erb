@@ -1,0 +1,37 @@
+<div class="nav-menu">
+  <div class="icons">
+      <%# Link to index page %>
+      <div class="nav-icons">
+        <%= link_to root_path do %>
+          <%= link_to(root_path, { class: "icons icon-spacing #{'icon-current' if current_page?(root_path)}" }) do %>
+            <i class="pt-1 fa-solid fa-house"></i>
+          <% end %>
+          <%= link_to(root_path, { class: "icons icon-spacing #{'span' if current_page?(root_path)}" }) do %>
+            <span>Home</span>
+          <% end %>
+        <% end %>
+      </div>
+      <%# Link to add item %>
+      <div class="nav-icons">
+        <%= link_to new_session_path do %>
+          <%= link_to(new_session_path, { class: "icons icon-spacing #{'icon-current' if current_page?(new_session_path)}" }) do %>
+            <i class="pt-1 fa-solid fa-circle-plus"></i>
+          <% end %>
+          <%= link_to(new_session_path, { class: "icons icon-spacing #{'span' if current_page?(new_session_path)}" }) do %>
+            <span>Create</span>
+          <% end %>
+        <% end %>
+     </div>
+      <%# Link to map page %>
+      <div class="nav-icons">
+        <%= link_to sessions_path do %>
+          <%= link_to(sessions_path, { class: "icons icon-spacing #{'icon-current' if current_page?(sessions_path)}" }) do %>
+            <i class="pt-1 fa-solid fa-user"></i>
+          <% end %>
+          <%= link_to(sessions_path, { class: "icons icon-spacing #{'span' if current_page?(sessions_path)}" }) do %>
+            <span>You</span>
+          <% end %>
+        <% end %>
+      </div>
+  </div>
+</div>
