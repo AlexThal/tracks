@@ -15,7 +15,7 @@ class ExerciseSessionsController < ApplicationController
     @session = Session.new(session_params)
     @session.user = current_user
 
-    if params[:session][:sport_id].nil?
+    if params[:session][:sport_id].nil? || params[:session][:sport_id].empty?
       @sport = Sport.create(name: params[:sport_input])
     else
       @sport = Sport.find(params[:session][:sport_id])
