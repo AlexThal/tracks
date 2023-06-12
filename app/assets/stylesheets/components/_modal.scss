@@ -1,0 +1,28 @@
+.modal-icons {
+  font-size: 28px;
+  opacity: 0.6;
+}
+
+.icons-left {
+  display: flex;
+  align-items: center;
+  opacity: 0.5;
+  font-size: 22px;
+}
+
+.modal {
+  --bs-modal-border-radius: 16px;
+  --bs-modal-header-border-color: none;
+}
+
+.modal-dialog {
+  position: absolute;
+  height: 80%;
+  top: 10%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10040;
+  overflow: auto;
+  overflow-y: auto;
+}
