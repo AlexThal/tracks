@@ -17,6 +17,7 @@
             <%= link_to exercise_session_path(session[:id]) do %>
               <i class="modal-icons m-3 fa-solid fa-circle-arrow-right" data-bs-dismiss="modal"></i>
             <% end %>
+            <%= link_to "duplicate", session_sessions_duplicate_path(session) %>
           </div>
         </div>
       </div>

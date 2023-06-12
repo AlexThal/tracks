@@ -6,10 +6,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  
+
   post 'friendships/:friend_id', to: 'friendships#create', as: 'friendships'
 
   resources :sessions, only: %i[index create new], controller: 'exercise_sessions' do
+    get 'sessions/duplicate', to: 'exercise_sessions#duplicate'
     resources :blocks, only: %i[create edit destroy]
   end
   get 'sessions/:id', to: 'exercise_sessions#show', as: 'exercise_session'
