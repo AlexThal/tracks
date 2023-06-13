@@ -14,8 +14,11 @@
             <div class="icons-left">
               <i class="m-3 fav-icon fa-regular fa-heart"></i>
             </div>
+            <%= link_to session_sessions_duplicate_path(session) do %>
+            <i class="modal-icons m-3 fa-regular fa-copy"></i>
+            <% end %>
             <%= link_to exercise_session_path(session[:id]) do %>
-              <i class="modal-icons m-3 fa-solid fa-circle-arrow-right" data-bs-dismiss="modal"></i>
+              <i class="icon-modal-yellow m-3 fa-solid fa-circle-arrow-right" data-bs-dismiss="modal"></i>
             <% end %>
           </div>
         </div>
