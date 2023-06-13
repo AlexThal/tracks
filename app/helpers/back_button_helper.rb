@@ -1,7 +1,7 @@
 module BackButtonHelper
-  def back_button
+  def btn_back
     redirect_to :back do
-      content_tag(:i, '', class: 'back-icon fa-solid fa-angle-left')
+      content_tag(:i, '', class: 'btn-back fa-solid fa-angle-left')
     end
   end
 end
