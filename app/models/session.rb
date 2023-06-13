@@ -4,4 +4,5 @@ class Session < ApplicationRecord
   has_many :blocks
   has_many :categories, through: :blocks
   validates :user, :sport, :date, presence: true
+  has_one_attached :photo
 end

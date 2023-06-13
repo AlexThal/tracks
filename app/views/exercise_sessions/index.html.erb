@@ -4,12 +4,12 @@
 </div>
 <div class="container">
   <h4 class="header-home">All Sessions</h4>
-  
+
   <% @sessions.each do |session| %>
     <%=link_to exercise_session_path(session[:id]) do %>
       <div class="dash-card-equipment mb-4 d-flex border-2 rounded-4">
-        <% if session.photo %>
-          <%= image_tag(session.photo, alt:"photo")  %>
+        <% if session.photo.attached? %>
+          <%= cl_image_tag session.photo.key, height: 300, width: 400, crop: :fill %>
         <% else %>
           <img class="image-round" src="https://787sports.co.uk/wp-content/uploads/2019/02/fotolia_190038155.jpg" alt="default image">
         <% end %>
