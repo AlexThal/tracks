@@ -9,8 +9,8 @@
       <%= f.input :comment %>
       <%= label_tag("Can't find your Sport?") %>
       <%= text_field_tag(:sport_input, '', class: "form-control string optional") %>
-      <%= f.submit "new session", class: "btn-main" %>
-      <%= link_to "Cancel", :back, {:class=>"btn-main"} %>
+      <%= f.submit "save session", class: "btn-main" %>
+      <%= link_to "Cancel", root_path, {:class=>"btn-main"} %>
     <% end %>
   </div>
 </div>

@@ -6,7 +6,7 @@
   <h4 class="header-home">All Sessions</h4>
   <div class="sessions">
     <% @sessions.each do |session| %>
-      <%= link_to link_to exercise_session_path(session[:id]) do %>
+      <%= link_to exercise_session_path(session[:id]) do %>
           <div class="card-equipment mb-4 border-2 rounded-4">
             <% if session.photo %>
               <%= image_tag(session.photo, alt:"photo", class:"image-round")  %>
