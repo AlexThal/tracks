@@ -2,6 +2,7 @@
   <%= f.input :title %>
   <%= f.input :date, required: false  %>
   <%= f.association :sport, required: false %>
+  <%= f.input :photo, as: :file %>
   <%= f.input :comment %>
   <%= label_tag("Can't find your Sport?") %>
   <%= text_field_tag(:sport_input, '', class: "form-control string optional") %>
