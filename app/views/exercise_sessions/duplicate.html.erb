@@ -1,0 +1,16 @@
+<div class="card m-3 rounded-4 p-3 d-flex align-items-center">
+  <h3 class="header-new"><i class="logo-color fa-solid fa-fire"></i> Tracks</h3>
+  <div class="container">
+    <%= simple_form_for(@duplicate_session) do |f| %>
+      <%= f.hidden_field :session_id, { value: @session.id }  %>
+      <%= f.input :title %>
+      <%= f.input :date, required: false  %>
+      <%= f.association :sport, required: false %>
+      <%= f.input :comment %>
+      <%= label_tag("Can't find your Sport?") %>
+      <%= text_field_tag(:sport_input, '', class: "form-control string optional") %>
+      <%= f.submit "new session", class: "btn-main" %>
+      <%= link_to "Cancel", :back, {:class=>"btn-main"} %>
+    <% end %>
+  </div>
+</div>
