@@ -13,11 +13,11 @@
       </div>
       <%# Link to add item %>
       <div class="nav-icons">
-        <%= link_to new_session_path do %>
-          <%= link_to(new_session_path, { class: "icons icon-spacing #{'icon-current' if current_page?(new_session_path)}" }) do %>
+        <%= link_to exercise_session_new_path do %>
+          <%= link_to(exercise_session_new_path, { class: "icons icon-spacing #{'icon-current' if current_page?(exercise_session_new_path)}" }) do %>
             <i class="pt-1 fa-solid fa-circle-plus"></i>
           <% end %>
-          <%= link_to(new_session_path, { class: "icons icon-spacing #{'span' if current_page?(new_session_path)}" }) do %>
+          <%= link_to(exercise_session_new_path, { class: "icons icon-spacing #{'span' if current_page?(exercise_session_new_path)}" }) do %>
             <span>Create</span>
           <% end %>
         <% end %>
