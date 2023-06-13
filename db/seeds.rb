@@ -41,7 +41,10 @@ sports = [
   { name: "Gym" },
   { name: "Climbing" },
   { name: "Yoga" },
-  { name: "Swimming" }
+  { name: "Swimming" },
+  { name: "Stand-up paddling" },
+  { name: "Pilates" },
+  { name: "Cycling" }
 ]
 
 sports.each do |sport|
@@ -61,7 +64,7 @@ categories = [
   { name: "Cardio" },
   { name: "Mobility" },
   { name: "Strength" },
-  { name: "Flexibility" },
+  { name: "Flexibility" }
 ]
 
 categories.each do |category|
@@ -79,7 +82,8 @@ sessions = [
   # Alex
   { user: alex, title: "Evening run", sport: running, date: Date.new(2023, 6, 3), comment: "Training for the half marathon! 💪", favourite: false, private: false, photo: "https://images.pexels.com/photos/3763869/pexels-photo-3763869.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
   { user: alex, title: "Killer swim", sport: swimming, date: Date.new(2023, 6, 5), comment: "Might have pushed it too hard on this one...", favourite: false, private: true, photo: "https://images.pexels.com/photos/863988/pexels-photo-863988.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
-  { user: alex, title: "Morning swim", sport: swimming, date: Date.new(2023, 6, 7), comment: "This one really hit the sweet spot!", favourite: true, private: false, photo: "https://images.pexels.com/photos/1263348/pexels-photo-1263348.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
+  { user: alex, title: "Morning swim", sport: swimming, date: Date.new(2023, 6, 7), comment: "This one really hit the sweet spot!", favourite: true, private: false, photo: "https://www.pexels.com/photo/green-swim-band-1415809/" },
+  { user: alex, title: "Open-water swim", sport: swimming, date: Date.new(2023, 6, 13), comment: "Killer swim 🦈", favourite: true, private: false, photo: "https://www.pexels.com/photo/man-swimming-with-shark-10498904/" },
   # Amanda
   { user: amanda, title: "Gym workout", sport: gym, date: Date.new(2023, 6, 4), comment: "New PR on the deadlift 💪", favourite: true, private: false, photo: "https://images.pexels.com/photos/11266952/pexels-photo-11266952.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" },
   { user: amanda, title: "Yoga to unwind", sport: yoga, date: Date.new(2023, 6, 5), comment: "Need to recover after that heavy lifting day", favourite: false, private: true },
