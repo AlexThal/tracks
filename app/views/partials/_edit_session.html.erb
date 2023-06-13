@@ -1,0 +1,15 @@
+<button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#editSessionModal">
+  Edit Session
+</button>
+<div class="modal fade" id="editSessionModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= render "partials/forms/session_form" %>
+      </div>
+    </div>
+  </div>
+</div>

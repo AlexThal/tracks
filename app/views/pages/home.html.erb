@@ -8,8 +8,8 @@
       <% @sessions.each do |session| %>
         <div data-bs-toggle="modal" data-bs-target="#modal_session_<%= session.id %>">
           <div class="session-card">
-            <% if session.photo %>
-              <%= image_tag(session.photo, alt:"photo", class:"image-round")  %>
+            <% if session.photo.attached? %>
+              <%= cl_image_tag session.photo.key, height: 300, width: 400, crop: :fill %>
             <% else %>
               <img class="image-round" src="https://787sports.co.uk/wp-content/uploads/2019/02/fotolia_190038155.jpg" alt="default image">
             <% end %>
@@ -27,8 +27,8 @@
     <% @friends_sessions.each do |session| %>
       <div data-bs-toggle="modal" data-bs-target="#modal_session_<%= session.id %>">
         <div class="session-card">
-          <% if session.photo %>
-            <%= image_tag(session.photo, alt:"photo", class:"image-round")  %>
+          <% if session.photo.attached? %>
+              <%= cl_image_tag session.photo.key, height: 300, width: 400, crop: :fill %>
           <% else %>
             <img class="image-round" src="https://787sports.co.uk/wp-content/uploads/2019/02/fotolia_190038155.jpg" alt="default image">
           <% end %>
@@ -52,7 +52,7 @@
             <% end %>
             <div class="ms-2 align-items-column">
               <h5 class="mt-1 mb-0"><%= user.username %></h5>
-              <p><%= user.sessions.last.comment %></p>
+              <p>user status<%#= user %></p>
               <p class="card_details card-action">Click to add Friend</p>
             </div>
           </div>
