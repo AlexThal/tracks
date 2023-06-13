@@ -31,6 +31,21 @@
   justify-content: space-between;
 }
 
+.set-info {
+  margin: 5px;
+  padding: 10px 15px 8px 15px;
+  background-color: rgba(170, 121, 185, 0.2);
+  border-radius: 4px;
+}
+
+.set-index {
+  display: block;
+}
+
+.extra-set-fields p {
+  margin-bottom: 2px;
+}
+
 .form-wrapper, .custom-field-wrapper {
   display: inline;
 }

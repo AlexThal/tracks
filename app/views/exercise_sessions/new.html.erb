@@ -1,14 +1,6 @@
 <div class="card m-3 rounded-4 p-3 d-flex align-items-center">
   <h3 class="header-new"><i class="logo-color fa-solid fa-fire"></i> Tracks</h3>
   <div class="container">
-    <%= simple_form_for(@session) do |f| %>
-      <%= f.input :title %>
-      <%= f.input :date, required: false  %>
-      <%= f.association :sport, required: false %>
-      <%= f.input :comment %>
-      <%= label_tag("Can't find your Sport?") %>
-      <%= text_field_tag(:sport_input, '', class: "form-control string optional") %>
-      <%= f.submit "save session", class: "btn-main" %>
-    <% end %>
+    <%= render "partials/forms/session_form" %>
   </div>
 </div>

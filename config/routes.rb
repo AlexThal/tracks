@@ -9,9 +9,9 @@ Rails.application.routes.draw do
 
   post 'friendships/:friend_id', to: 'friendships#create', as: 'friendships'
 
-  resources :sessions, only: %i[index create new], controller: 'exercise_sessions' do
+  resources :sessions, only: %i[index create new update destroy], controller: 'exercise_sessions' do
     get 'sessions/duplicate', to: 'exercise_sessions#duplicate'
-    resources :blocks, only: %i[create edit destroy]
+    resources :blocks, only: %i[create update destroy]
   end
   get 'sessions/:id', to: 'exercise_sessions#show', as: 'exercise_session'
 

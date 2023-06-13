@@ -1,0 +1,16 @@
+<div class="collapse" id="collapseSet<%=block.id%>" data-controller="custom-field">
+  <%= simple_form_for @set, html: { class: "mt-3"} do |f| %>
+    <%= f.hidden_field :block_id, { value: block.id }  %>
+    <%= f.hidden_field :custom_field, data: { custom_field_target: 'inputField' } %>
+    <div class ="form-wrapper" data-custom-field-target="wrapper">
+      <p>What do you want to track?</p>
+      <div class="custom-field-wrapper" data-custom-field-target="pair">
+        <input class="custom-field-form form-control string required" type="text" name="set_key" id="set_key" placeholder="reps, weight, distance...">
+        <p class="custom-field-form">:</p>
+        <input class="custom-field-form form-control string required" type="text" name="set_value" id="set_value" placeholder="12, 40Kg, 12km...">
+      </div>
+    </div>
+    <i class="custom-field-btn fa-solid fa-circle-plus" data-action="click->custom-field#save"></i>
+    <%= f.submit 'Add set', class: 'btn-main form-actions' %>
+  <% end %>
+</div>

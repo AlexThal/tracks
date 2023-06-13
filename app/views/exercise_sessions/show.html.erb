@@ -1,8 +1,17 @@
 <h1><%= @session.title %></h1>
 <h2><%= @session.sport.name %></h2>
+<%= render "partials/edit_session" %>
+<%= link_to exercise_session_path(@session),class: "btn-delete", data: { turbo_method: "delete", turbo_confirm: "Are you sure?" } do %>
+  <i class="fa-solid fa-trash-can"></i>
+<% end %>
+
 <ol class = "block-container">
   <%= render "partials/block_card" %>
 </ol>
+
+<button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#newBlockModal">
+  <i class="fa-solid fa-circle-plus"></i> Block
+</button>
 <%= render "partials/new_block_card" %>
 <%= link_to root_path do %>
   <i class="fa-solid fa-angle-left"></i>

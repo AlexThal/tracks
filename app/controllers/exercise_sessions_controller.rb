@@ -1,5 +1,5 @@
 class ExerciseSessionsController < ApplicationController
-  before_action :set_session, only: %i[show destroy]
+  before_action :set_session, only: %i[show destroy update]
 
   def index
     @sessions = current_user.sessions
@@ -33,6 +33,11 @@ class ExerciseSessionsController < ApplicationController
     @blocks = @session.blocks
     @block = Block.new
     @set = ExerciseSet.new
+  end
+
+  def update
+    @session.update(session_params)
+    redirect_to exercise_session_path(@session), status: :see_other
   end
 
   def destroy
