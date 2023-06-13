@@ -1,5 +1,5 @@
 class BlocksController < ApplicationController
-  before_action :set_session, only: %i[new create destroy]
+  before_action :set_session, only: %i[new create destroy update]
 
   def create
     @block = Block.new(block_params)
@@ -10,6 +10,12 @@ class BlocksController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def update
+    @block = Block.find(params[:block][:block_id])
+    @block.update(block_params)
+    redirect_to exercise_session_path(@session), status: :see_other
   end
 
   def destroy

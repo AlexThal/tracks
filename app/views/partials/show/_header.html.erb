@@ -1,0 +1,6 @@
+<div class = "block-header">
+  <li><%= block.name %></li>
+  <% unless block.category.nil? || block.category.name.empty? %>
+  <p class="category"><%="##{block.category.name}" if block.category%></p>
+  <% end %>
+</div>

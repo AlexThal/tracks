@@ -17,7 +17,7 @@ export default class extends Controller {
     this.pairTargets.forEach((pair) => {
       let key = pair.firstElementChild.value
       let value = pair.lastElementChild.value
-      str = `{${str.slice(1,-1)}"${key}":"${value}",}`
+      str = `{${str.slice(1,-1)}"${key.toLowerCase()}":"${value.toLowerCase()}",}`
     })
 
     let html = `<div class="custom-field-wrapper" data-custom-field-target="pair">
