@@ -1,7 +1,75 @@
+.session-banner {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.session-banner img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -2;
+}
+
+.image-gradient {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: linear-gradient(#444343, #121213);
+  opacity: 0.2;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.session-banner h1 {
+  text-shadow: 2px 2px 4px rgb(29, 29, 30);
+  font-size: 1.8em;
+}
+
+#edit-session-dropdown {
+  transform: translate3d(-35px, 18px, 0px) !important;
+  border-radius: 10px 0px 10px 10px;
+}
+
+.session-menu {
+  height: 28px;
+  width: 28px;
+  font-size: 1.8em;
+  position: absolute;
+  right: 24px;
+  top: 10px;
+}
+
+.session-menu a {
+  color: white;
+}
+
+.dropdown-item {
+  color: black !important;
+}
+
+.wrapper {
+  text-align: center;
+}
+
+.wrapper .block-category{
+  margin: 0 auto;
+  box-shadow: 0px 0px 8px #393838;
+}
+
 .block-container {
   width: 100%;
   left: 0;
   padding: 0;
+  margin-bottom: 11px;
 }
 
 .block-card {
@@ -59,27 +127,49 @@
 }
 
 .set-info {
+  width: 94%;
   margin: 5px;
+  margin-bottom: 10px;
   padding: 10px 15px 8px 15px;
-  background-color: rgba(170, 121, 185, 0.2);
+  // background-color: rgba(170, 121, 185, 0.2);
+  border: 1px solid black;
   border-radius: 4px;
+  align-items: center;
+}
+
+.sets-extended-view {
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 .block-controls {
   display: flex;
   justify-content: flex-end;
-}
-
-.btn-delete {
-  margin-right: 15px;
+  margin-top: 10px;
 }
 
 .btn-delete:hover {
   cursor: pointer;
 }
 
+.block-controls .btn-delete {
+  margin-right: 15px;
+}
+
 .set-index {
-  display: block;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F0ECCF;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 1.2em;
+}
+
+.extra-set-fields {
+  width: 75%;
 }
 
 .extra-set-fields p {
@@ -90,9 +180,13 @@
   display: inline;
 }
 
+.form-wrapper p {
+  margin-bottom: 0.5rem;
+}
+
 .custom-field-form {
   display: inline;
-  width: 40%;
+  width: 42%;
   margin-bottom: 25px;
 }
 
@@ -102,10 +196,42 @@
 
 .custom-field-btn {
   display: inline;
+  margin-left: 5px;
 }
 
 .custom-field-btn:hover {
   cursor: pointer;
+}
+
+.add-block-btn {
+  width: 95%;
+  margin-left: 2.5%;
+  border-radius: 6px;
+  background-color: #2498CB;
+  color: white;
+}
+
+.add-set-btn {
+  width: 94%;
+  margin-left: 5px;
+  border-radius: 6px;
+  background-color: #2498CB;
+  color: white;
+}
+
+.add-block-btn:hover, .add-set-btn:hover {
+  background-color: #2498CB;
+  color: white;
+}
+
+.set-fixed-inputs {
+  display: flex;
+  width: 94%;
+  margin-bottom: -10px;
+}
+
+.exercise_set_weight, .exercise_set_distance {
+  margin-left: 8px
 }
 
 .purple-black {

@@ -1,23 +1,20 @@
-<div class="collapse" id="collapseExample<%=block.id%>">
-  <hr style="width:100%;text-align:left;margin-left:0">
+<div class="collapse sets-extended-view" id="collapseExample<%=block.id%>">
 
   <% sets.reverse.each_with_index do |set, index| %>
   <%# SET INFO %>
     <div class="set-info">
       <%# SET NUMBER %>
-      <p class="set-index"><%=(index + 1).ordinalize%> set</p>
+      <p class="set-index"><%=index + 1%></p>
       <div class="extra-set-fields">
-        <%# SETS AND REPS %>
-        <% if set.custom_field %>
-          <% if (set.custom_field.keys & ['reps', 'repetitions', 'weight']).length >= 2 %>
-            <p><%= "#{set.custom_field['reps']} x #{set.custom_field['weight']}"%></p>
-          <% end %>
+        <%# REPS AND WEIGHT %>
+        <% unless set.repetitions.nil? || set.repetitions.empty? || set.weight.nil? || set.weight.empty? %>
+          <p><%= "#{set.repetitions} x #{set.weight}"%></p>
         <% end %>
         <%# OTHER SET FIELDS %>
         <% if set.distance =! ""  %>
           <p><%= "Distance: #{set.distance}"%></p>
         <% end %>
-        <% if set.custom_field %>
+        <% unless set.custom_field.nil? || set.custom_field.empty? %>
           <% set.custom_field.each do |key, value| %>
             <p><%= key.capitalize %>: <%= value %></p>
           <% end %>
@@ -25,16 +22,14 @@
       </div>
       <%# DELETE SET %>
       <%= link_to exercise_set_path(set),class: "btn-delete", data: { turbo_method: "delete", turbo_confirm: "Are you sure?" } do %>
-        <i class="fa-solid fa-circle-minus"></i>
+        <i class="fa-solid fa-xmark"></i>
       <% end %>
     </div>
   <% end %>
   <%# ADD SET %>
-  <button type="button" class="btn btn-outline-dark" data-bs-toggle="collapse" data-bs-target="#collapseSet<%=block.id%>" aria-expanded="false" aria-controls="collapseExample">
-    <i class="fa-solid fa-circle-plus"></i> Set
+  <button type="button" class="btn add-set-btn" data-bs-toggle="collapse" data-bs-target="#collapseSet<%=block.id%>" aria-expanded="false" aria-controls="collapseExample">
+    <i class="fa-solid fa-plus"></i> Set
   </button>
   <%# ADD SET FORM %>
   <%= render "partials/forms/add_set_form", :block => block, :@set => @set %>
-
-  <hr style="width:100%;text-align:left;margin-left:0">
 </div>

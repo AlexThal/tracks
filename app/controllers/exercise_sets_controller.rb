@@ -2,7 +2,10 @@ class ExerciseSetsController < ApplicationController
 
   def create
     @set = ExerciseSet.new(exercise_set_params)
-    @set.custom_field = JSON.parse(exercise_set_params[:custom_field])
+
+    unless @set.custom_field.empty?
+      @set.custom_field = JSON.parse(exercise_set_params[:custom_field])
+    end
     @set.block = Block.find(params[:exercise_set][:block_id])
     @session = @set.block.session
     if @set.save

@@ -1,16 +1,37 @@
-<div class = "session-banner">
-  <h1><%= @session.title %></h1>
-  <%= render "partials/edit_session" %>
-</div>
-<%= link_to exercise_session_path(@session),class: "btn-delete", data: { turbo_method: "delete", turbo_confirm: "Are you sure?" } do %>
-  <i class="fa-solid fa-trash-can"></i>
+<%= link_to root_path, {:class=>"btn-back"} do%>
+  <i class="fa-solid fa-chevron-left"></i>
 <% end %>
+<div class = "session-banner">
+  <div class = "wrapper">
+    <h1><%= @session.title %></h1>
+    <p class=""><i class="fa-regular fa-calendar"></i> <%= @session.created_at.strftime('%B %d, %Y at %H:%M %p') %></p>
+    <p class="block-category"><%=@session.sport.name if @session.sport%></p>
+    <%= render "partials/edit_session" %>
+  </div>
+
+  <div class="dropdown session-menu dropstart">
+    <a href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <i class="fa-solid fa-ellipsis"></i>
+    </a>
+    <ul class="dropdown-menu" id="edit-session-dropdown">
+      <li><%= link_to exercise_session_path(@session),class: "btn-delete dropdown-item", data: { turbo_method: "delete", turbo_confirm: "Are you sure?" } do %>
+        <i class="fa-solid fa-trash-can"></i> Delete session
+      <% end %></li>
+      <li><a class="btn-delete dropdown-item" role="button" data-bs-toggle="modal" data-bs-target="#editSessionModal">
+        <i class="fa-solid fa-pen-to-square"></i> Edit session
+      </a></li>
+    </ul>
+  </div>
+  <div class="image-gradient"></div>
+  <%= image_tag(@session.photo, alt:"photo") %>
+</div>
 
 <ol class = "block-container">
   <%= render "partials/block_card" %>
 </ol>
 
-<button type="button" class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#newBlockModal">
-  <i class="fa-solid fa-circle-plus"></i> Block
+<button type="button" class="btn add-block-btn" data-bs-toggle="modal" data-bs-target="#newBlockModal">
+  <i class="fa-solid fa-plus"></i> Block
 </button>
 <%= render "partials/new_block_card" %>
+<br><br>
