@@ -41,7 +41,7 @@
     <% end %>
   </div>
 
-  <h4 class="header-home">New Friends</h4>
+  <h4 class="header-home">Friend suggestions</h4>
     <% @suggested_friends.each do |user| %>
         <%= link_to friendships_path(user), data: { turbo_method: "post" } do %>
           <div class="card-equipment mb-4 border-2 rounded-4">
@@ -52,7 +52,7 @@
             <% end %>
             <div class="ms-2 align-items-column">
               <h5 class="mt-1 mb-0"><%= user.username %></h5>
-              <p>user status<%#= user %></p>
+              <p> <%= user.status %></p>
               <p class="card_details card-action">Click to add Friend</p>
             </div>
           </div>
