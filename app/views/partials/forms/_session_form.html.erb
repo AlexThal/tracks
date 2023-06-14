@@ -2,7 +2,7 @@
   <i class="fa-solid fa-chevron-left"></i>
 <% end %>
 <div class="header-duplicate">
-  <h3>Tracks</h3>
+  <h1>Tracks</h1>
 </div>
 <div class="card-duplicate">
   <div class="container-duplicate">
@@ -11,8 +11,8 @@
       <%= f.input :title %>
       <%= f.input :date, as: :date, html5: true, required: false %>
       <%= f.association :sport, required: false %>
-      <%= label_tag("Can't find your Sport?")%>
-      <%= text_field_tag(:sport_input, '', class: "form-control string optional")%>
+      <%= label_tag("Can't find your Sport?", nil, class: "form-label")%>
+      <%= text_field_tag(:sport_input, nil, class: "form-control string optional")%>
       <%= f.input :photo, as: :file %>
       <%= f.input :comment %>
       <div class="d-flex justify-content-center">
