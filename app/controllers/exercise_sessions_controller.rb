@@ -77,6 +77,6 @@ class ExerciseSessionsController < ApplicationController
   end
 
   def session_params
-    params.require(:session).permit(:title, :date, :sport, :comment)
+    params.require(:session).permit(:title, :date, :sport, :comment, :photo)
   end
 end

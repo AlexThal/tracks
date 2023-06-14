@@ -1,16 +1,22 @@
-<div class="card m-3 rounded-4 p-3 d-flex align-items-center">
-  <h3 class="header-new"><i class="logo-color fa-solid fa-fire"></i> Tracks</h3>
-  <div class="container">
+<%= link_to root_path, {:class=>"btn-back"} do%>
+  <i class="fa-solid fa-chevron-left"></i>
+<% end %>
+<div class="header-duplicate">
+  <h3>Tracks</h3>
+</div>
+<div class="card-duplicate">
+  <div class="container-duplicate">
     <%= simple_form_for(@duplicate_session) do |f| %>
       <%= f.hidden_field :session_id, { value: @session.id }  %>
       <%= f.input :title %>
-      <%= f.input :date, required: false  %>
+      <%= f.input :date, as: :date, html5: true, required: false %>
       <%= f.association :sport, required: false %>
+      <%= label_tag("Can't find your Sport?")%>
+      <%= text_field_tag(:sport_input, '', class: "form-control string optional")%>
       <%= f.input :comment %>
-      <%= label_tag("Can't find your Sport?") %>
-      <%= text_field_tag(:sport_input, '', class: "form-control string optional") %>
-      <%= f.submit "save session", class: "btn-main" %>
-      <%= link_to "Cancel", root_path, {:class=>"btn-main"} %>
+      <div class="d-flex justify-content-center">
+        <%= f.submit "Save", class: "btn-create" %>
+      </div>
     <% end %>
   </div>
 </div>
