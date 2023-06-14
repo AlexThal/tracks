@@ -19,30 +19,28 @@
   width: 100%;
 }
 .new_session label {
-  margin-bottom: 12px;
+  margin-bottom: 6px;
+}
+.form-label {
+  font-size: 18px;
 }
 .form-select {
   margin-left: 0 !important;
   margin-right: 0 !important;
-  border-color: black;
   background-color: white;
   border-radius: 8px;
 }
 .form-control {
-  border-color: black;
   background-color: white;
   margin-bottom: 8px
 }
 .form-control.is-valid {
-  border-color: black;
   background-color: white;
 }
 .select.is-valid {
-  border-color: black;
   background-color: white;
 }
 .form-select.is-valid {
-  border-color: black;
   background-color: white;
   border-radius: 8px;
 }

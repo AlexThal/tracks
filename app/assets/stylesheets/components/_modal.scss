@@ -2,19 +2,25 @@
   font-size: 28px;
   opacity: 0.6;
 }
-
+.modal-title {
+  margin-top: 16px;
+}
+.modal-header {
+  margin-bottom: -16px;
+}
 .icons-left {
   display: flex;
   align-items: center;
   opacity: 0.5;
   font-size: 22px;
 }
-
+.modal-body {
+  font-size: 17px;
+}
 .modal {
   --bs-modal-border-radius: 16px;
   --bs-modal-header-border-color: none;
 }
-
 .modal-dialog {
   position: absolute;
   height: 80%;
@@ -26,7 +32,6 @@
   overflow: auto;
   overflow-y: auto;
 }
-
 .icon-modal-yellow{
   color: white;
   background-color: #FFB100;

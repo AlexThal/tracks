@@ -1,9 +1,9 @@
+<div class="header-duplicate greeting">
+  <h1><strong>Tracks</strong></h1>
+</div>
 <%= link_to root_path, {:class=>"btn-back"} do%>
   <i class="fa-solid fa-chevron-left"></i>
 <% end %>
-<div class="header-duplicate">
-  <h3><strong>Tracks</strong></h3>
-</div>
 <div class="card-duplicate">
   <div class="container-duplicate">
     <%= simple_form_for(@duplicate_session) do |f| %>
@@ -11,8 +11,8 @@
       <%= f.input :title %>
       <%= f.input :date, as: :date, html5: true, required: false %>
       <%= f.association :sport, required: false %>
-      <%= label_tag("Can't find your Sport?")%>
-      <%= text_field_tag(:sport_input, '', class: "form-control string optional")%>
+      <%= label_tag("Can't find your Sport?", nil, class: "form-label")%>
+      <%= text_field_tag(:sport_input, nil, class: "form-control string optional")%>
       <%= f.input :comment %>
       <div class="d-flex justify-content-center">
         <%= f.submit "Save", class: "btn-create" %>

@@ -1,8 +1,8 @@
-<div class="banner greeting">
+<div class="banner greeting-index">
   <%= link_to root_path, {:class=>"btn-back"} do%>
     <i class="fa-solid fa-chevron-left"></i>
   <% end %>
-  <h3><strong>Hi&nbsp;<%= current_user.username %></strong></h3>
+  <h1>Hi&nbsp;<%= current_user.username %><h1>
   <%= image_tag(current_user.photo, alt:"Your avatar", class:"avatar")  %>
 </div>
 <div class="container">
@@ -17,8 +17,8 @@
           <img class="image-round" src="https://787sports.co.uk/wp-content/uploads/2019/02/fotolia_190038155.jpg" alt="default image">
         <% end %>
         <div>
-          <h5 class="mt-3 mb-1"><%= session.title %></h5>
-          <p class="mb-1"><%= truncate(session.comment, :length => 28) %></p>
+          <h4 class="mt-3"><%= session.title %></h4>
+          <h6 class="mt-3 mb-1"><%= truncate(session.comment, :length => 28) %></h6>
           <%# <p><%= session.date %></p>
           <p class="date-dash mt-2"><%= session.created_at.strftime('%B %d, %Y at %H:%M %p') %></p>
         </div>
