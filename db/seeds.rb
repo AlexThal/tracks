@@ -23,7 +23,11 @@ puts "Creating users"
 users = [
   { username: "Alex", email: "alex@example.com", password: "123456", photo: "https://ca.slack-edge.com/T02NE0241-U052U7DHAG0-3906dcde5969-48" },
   { username: "Amanda", email: "amanda@example.com", password: "123456", photo: "https://ca.slack-edge.com/T02NE0241-U0531H665K8-0ad20ef179f8-72" },
-  { username: "Rodrigo", email: "rodrigo@example.com", password: "123456", photo: "https://ca.slack-edge.com/T02NE0241-U05293W949L-e73882cc8959-48" }
+  { username: "Rodrigo", email: "rodrigo@example.com", password: "123456", photo: "https://ca.slack-edge.com/T02NE0241-U05293W949L-e73882cc8959-48" },
+  { username: "Jack", email: "jack@example.com", password: "123456", photo: "https://ca.slack-edge.com/T02NE0241-U052JJ3C4TW-cf7c2e56f566-72" },
+  { username: "Tim", email: "tim@example.com", password: "123456", photo: "https://ca.slack-edge.com/T02NE0241-U053J43E812-476f9faa7b4a-512" },
+  { username: "Andria", email: "andria@example.com", password: "123456", photo: "https://ca.slack-edge.com/T02NE0241-U052B7X5TU5-33249e66d26b-512" },
+  { username: "Jan", email: "jan@example.com", password: "123456", photo: "https://ca.slack-edge.com/T02NE0241-U0534B56UFJ-ef2347e32d27-512" }
 ]
 
 users.each do |user|
@@ -34,6 +38,10 @@ end
 alex = User.find_by username: 'Alex'
 amanda = User.find_by username: 'Amanda'
 rodrigo = User.find_by username: 'Rodrigo'
+jack = User.find_by username: 'Jack'
+tim = User.find_by username: 'Tim'
+andria = User.find_by username: 'Andria'
+jan = User.find_by username: 'Jan'
 
 puts "Creating sports"
 
@@ -45,7 +53,10 @@ sports = [
   { name: "Swimming" },
   { name: "Stand-up paddling" },
   { name: "Pilates" },
-  { name: "Cycling" }
+  { name: "Cycling" },
+  { name: "Hiking" },
+  { name: "Bouldering" },
+  { name: "Skiing" }
 ]
 
 sports.each do |sport|
@@ -58,6 +69,11 @@ gym = Sport.find_by name: 'Gym'
 climbing = Sport.find_by name: 'Climbing'
 yoga = Sport.find_by name: 'Yoga'
 swimming = Sport.find_by name: 'Swimming'
+standup = Sport.find_by name: 'Stand-up paddling'
+cycling = Sport.find_by name: 'Cycling'
+hiking = Sport.find_by name: 'Hiking'
+bouldering = Sport.find_by name: 'Bouldering'
+skii = Sport.find_by name: 'Skiing'
 
 puts "Creating categories"
 
@@ -81,18 +97,21 @@ puts "Creating sessions"
 
 sessions = [
   # Alex
-  { user: alex, title: "Evening run", sport: running, date: Date.new(2023, 6, 3), comment: "Training for the half marathon! 💪", favourite: false, private: false, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686670098/xksdnfltpsqf3ztrgvoa.jpg" },
-  { user: alex, title: "Killer swim", sport: swimming, date: Date.new(2023, 6, 5), comment: "Might have pushed it too hard on this one...", favourite: false, private: true, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686670088/xd2qv0yxvca1b5awy4im.jpg" },
-  { user: alex, title: "Morning swim", sport: swimming, date: Date.new(2023, 6, 7), comment: "This one really hit the sweet spot!", favourite: true, private: false, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686670090/wubncudycqfvejesjstv.jpg" },
-  { user: alex, title: "Open-water swim", sport: swimming, date: Date.new(2023, 6, 13), comment: "Killer swim 🦈", favourite: true, private: false, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686670091/xnutuvzfn3tjkry3vbrz.jpg" },
+  { user: alex, title: "Sunny hike", sport: hiking, date: Date.new(2023, 6, 3), comment: "Tough hike, worth the view!", favourite: false, private: false, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686738044/TRACKS/hiker_Alex_rzilsz.jpg" },
+  { user: alex, title: "Relaxed swim", sport: swimming, date: Date.new(2023, 6, 5), comment: "can you tell i'm relaxed?", favourite: false, private: true, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686738042/TRACKS/alex_unicorn_poolfloat_zceymo.jpg" },
+  { user: alex, title: "Paddles down!", sport: standup, date: Date.new(2023, 6, 7), comment: "This one really hit the sweet spot!", favourite: true, private: false, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686738667/TRACKS/005_uhiqb0.jpg" },
+  { user: alex, title: "Abfahrt Ski", sport: skii, date: Date.new(2023, 6, 13), comment: "Hit all the slopes, day well spent", favourite: true, private: false, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686738044/TRACKS/IMG_8150_galtgc.heic" },
+  { user: alex, title: "Summer Paddle", sport: skii, date: Date.new(2023, 6, 13), comment: "A good four hours of paddling", favourite: true, private: false, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686738042/TRACKS/alex_paddleboard_friends_qzooe5.heic" },
   # Amanda
-  { user: amanda, title: "Gym workout", sport: gym, date: Date.new(2023, 6, 4), comment: "New PR on the deadlift 💪", favourite: true, private: false, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686670094/furqomspoonnd7bnzrd0.jpg" },
-  { user: amanda, title: "Yoga to unwind", sport: yoga, date: Date.new(2023, 6, 5), comment: "Need to recover after that heavy lifting day", favourite: false, private: true, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686670092/grwfbcvymswgyh0mywj7.jpg"  },
-  { user: amanda, title: "Gym mobility", sport: gym, date: Date.new(2023, 6, 10), comment: "In this session I focused heavily on mobility", favourite: true, private: false, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686670094/furqomspoonnd7bnzrd0.jpg" },
+  { user: amanda, title: "Gym workout", sport: hiking, date: Date.new(2023, 6, 4), comment: "New PR on the deadlift 💪", favourite: true, private: false, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686746602/TRACKS/pexels-rdne-stock-project-8401904_e59urc.jpg" },
+  { user: amanda, title: "Backbend practice", sport: yoga, date: Date.new(2023, 6, 5), comment: "Need to recover after that heavy lifting day", favourite: false, private: true, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686738041/TRACKS/Amy_bow_viqflb.jpg"  },
+  { user: amanda, title: "Gym mobility", sport: gym, date: Date.new(2023, 6, 10), comment: "In this session I focused heavily on mobility", favourite: true, private: false, photo: "" },
+  { user: amanda, title: "Slalum baby!", sport: gym, date: Date.new(2023, 6, 10), comment: "Slalum baby, slaaaalum!", favourite: true, private: false, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686738040/TRACKS/Amy_skii_hlt5sk.png" },
   # Rodrigo
-  { user: rodrigo, title: "Boulder sesh", sport: climbing, date: Date.new(2023, 6, 4), comment: "Good to be out on a sunny day", favourite: true, private: false, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686670095/fap0nai9kvyhhrdeamvb.jpg" },
+  { user: rodrigo, title: "Boulder sesh", sport: bouldering, date: Date.new(2023, 6, 4), comment: "Good to be out on a sunny day", favourite: true, private: false, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686738036/TRACKS/Rodri_boulder_yc2wcv.jpg" },
   { user: rodrigo, title: "Back to the gym", sport: gym, date: Date.new(2023, 6, 5), comment: "First day back after a long break", favourite: false, private: true, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686670096/vd5iwhyfn34uqua4zsw0.jpg" },
-  { user: rodrigo, title: "5k run", sport: running, date: Date.new(2023, 6, 9), comment: "Training for that sub 20min 5k", favourite: true, private: false, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686670098/xksdnfltpsqf3ztrgvoa.jpg" }
+  { user: rodrigo, title: "60k bike ride", sport: cycling, date: Date.new(2023, 6, 9), comment: "Training for the Tour de Le Wagon", favourite: true, private: false, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686741149/TRACKS/015_zov3mc.jpg" },
+  { user: rodrigo, title: "Indoor climb", sport: climbing, date: Date.new(2023, 6, 9), comment: "I sent a lot of problems this day ", favourite: true, private: false, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686741109/TRACKS/017_aesdse.jpg" }
 ]
 
 sessions.each do |session|
