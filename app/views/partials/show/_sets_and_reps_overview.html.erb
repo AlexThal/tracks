@@ -1,10 +1,17 @@
-<button class="btn btn-outline-dark mt-2 mb-2 dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample<%=block.id%>" aria-expanded="false" aria-controls="collapseExample">
-    <strong><%= "#{sets.length} x #{
-      repetitions = sets.map { |set| set.repetitions }
-      if repetitions.uniq.size <= 1
-        repetitions[0]
-      else
-        repetitions.join("/")
-      end
-    }" %></strong></i>
-</button>
+<% if sets.length > 0 %>
+  <button class="btn btn-outline-dark mt-2 mb-2 dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample<%=block.id%>" aria-expanded="false" aria-controls="collapseExample">
+      <%= "#{sets.length} x #{
+        repetitions = sets.map { |set| set.repetitions }
+        if repetitions.uniq.size <= 1
+          repetitions[0]
+        else
+          repetitions.join("/").truncate(8)
+        end
+      }" %>
+  </button>
+<% else %>
+  <button type="button" class="btn btn-outline-dark mt-2 mb-2" data-bs-toggle="collapse" data-bs-target="#collapseSet<%=block.id%>" aria-expanded="false" aria-controls="collapseExample">
+    <i class="fa-solid fa-plus"></i> Set
+  </button>
+  <%= render "partials/forms/add_set_form", :block => block, :@set => @set %>
+<% end %>

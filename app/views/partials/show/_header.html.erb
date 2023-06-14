@@ -1,6 +1,7 @@
 <div class = "block-header">
-  <li><%= block.name %></li>
-  <% unless block.category.nil? || block.category.name.empty? %>
-  <p class="category"><%="##{block.category.name}" if block.category%></p>
-  <% end %>
+  <div class = "block-title-flex">
+    <span class="block-number"><%= index + 1 %></span>
+    <li><%= block.name %></li>
+  </div>
+  <%= render "partials/show/sets_and_reps_overview", :block => block, :sets => sets %>
 </div>
