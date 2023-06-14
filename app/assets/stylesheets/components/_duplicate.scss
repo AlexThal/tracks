@@ -4,6 +4,8 @@
   align-items: center;
   background-color: #FBC252;
   height: 80px;
+  letter-spacing: 4px;
+  color: white;
   // z-index: 10;
 }
 .card-duplicate {
@@ -16,24 +18,31 @@
   padding: 15px;
   width: 100%;
 }
+.new_session label {
+  margin-bottom: 12px;
+}
 .form-select {
   margin-left: 0 !important;
   margin-right: 0 !important;
+  border-color: black;
+  background-color: white;
+  border-radius: 8px;
 }
 .form-control {
-  border-color: #FBC252;
+  border-color: black;
   background-color: white;
+  margin-bottom: 8px
 }
 .form-control.is-valid {
-  border-color: #FBC252;
+  border-color: black;
   background-color: white;
 }
 .select.is-valid {
-  border-color: #FBC252;
+  border-color: black;
   background-color: white;
 }
 .form-select.is-valid {
-  border-color: #FBC252;
+  border-color: black;
   background-color: white;
   border-radius: 8px;
 }
@@ -44,8 +53,11 @@
   border: 4px;
   background-color: #FBC252;
   border-radius: 8px;
+  letter-spacing: 2px;
+  // color: white;
 }
 .btn-back{
+  color: #FBC252;
   padding-left: 8px;
   height: 28px;
   width: 28px;
