@@ -6,7 +6,7 @@ class PagesController < ApplicationController
     # @sessions = Session.all
     @sessions = current_user.sessions.first(3)
     @following_sessions = Session.where(user: current_user.friends)
-    @suggested_friends = User.where.not(id: current_user.id)
+    @suggested_friends = User.where.not(id: [current_user.id] + current_user.friends.pluck(:id))
     @friends_sessions = Session.where(user: current_user.friends)
   end
 end
