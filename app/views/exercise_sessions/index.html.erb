@@ -1,9 +1,12 @@
 <div class="banner greeting">
-      <h3>Hi&nbsp;<%= current_user.username %></h3>
-    <%= image_tag(current_user.photo, alt:"Your avatar", class:"avatar")  %>
+  <%= link_to root_path, {:class=>"btn-back"} do%>
+    <i class="fa-solid fa-chevron-left"></i>
+  <% end %>
+  <h3><strong>Hi&nbsp;<%= current_user.username %></strong></h3>
+  <%= image_tag(current_user.photo, alt:"Your avatar", class:"avatar")  %>
 </div>
 <div class="container">
-  <h4 class="header-home">All Sessions</h4>
+  <h4 class="header-home">Your Sessions</h4>
 
   <% @sessions.each do |session| %>
     <%=link_to exercise_session_path(session[:id]) do %>
