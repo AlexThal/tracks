@@ -1,5 +1,5 @@
 <% if sets.length > 0 %>
-  <button class="btn btn-outline-dark mt-2 mb-2 dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample<%=block.id%>" aria-expanded="false" aria-controls="collapseExample">
+  <button class="show-sets-btn btn btn-outline-dark mt-2 mb-2 dropdown-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample<%=block.id%>" aria-expanded="false" aria-controls="collapseExample">
       <%= "#{sets.length} x #{
         repetitions = sets.map { |set| set.repetitions }
         if repetitions.uniq.size <= 1

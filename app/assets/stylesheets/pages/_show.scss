@@ -8,6 +8,11 @@
   color: white;
 }
 
+.session-banner p {
+  color: white !important;
+  text-shadow: 2px 2px 4px rgb(29, 29, 30);
+}
+
 .session-banner img {
   height: 100%;
   width: 100%;
@@ -32,6 +37,7 @@
 .session-banner h1 {
   text-shadow: 2px 2px 4px rgb(29, 29, 30);
   font-size: 1.8em;
+  color: white !important;
 }
 
 #edit-session-dropdown {
@@ -145,7 +151,6 @@
 .block-controls {
   display: flex;
   justify-content: flex-end;
-  margin-top: 10px;
 }
 
 .btn-delete:hover {
@@ -168,6 +173,14 @@
   font-size: 1.2em;
 }
 
+.extra-block-fields p {
+  margin-bottom: 3px;
+}
+
+.extra-block-fields {
+  margin-top: 10px;
+}
+
 .extra-set-fields {
   width: 75%;
 }
@@ -188,6 +201,13 @@
   display: inline;
   width: 42%;
   margin-bottom: 25px;
+}
+
+.block-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-top: 10px;
 }
 
 .custom-field-form::placeholder {
@@ -234,6 +254,59 @@
   margin-left: 8px
 }
 
+.show-sets-btn {
+  border-radius: 4px !important;
+}
+
+.btn-outline-dark {
+  --bs-btn-color: #212529;
+  --bs-btn-border-color: #212529;
+  --bs-btn-hover-color: #212529 !important;
+  --bs-btn-hover-bg: transparent !important;
+  --bs-btn-hover-border-color: #212529;
+  --bs-btn-focus-shadow-rgb: 33, 37, 41;
+  --bs-btn-active-color: #212529 !important;
+  --bs-btn-active-bg: transparent !important;
+  --bs-btn-active-border-color: #212529;
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: #212529;
+  --bs-btn-disabled-bg: transparent;
+  --bs-btn-disabled-border-color: #212529;
+  --bs-gradient: none;
+}
+
 .purple-black {
   color: #4A3764;
+}
+
+.red {
+  background-color: #EE4121;
+}
+
+.purple {
+  background-color: #6150C1;
+}
+
+.yellow {
+  background-color: #FFB100;
+}
+
+.cyan {
+  background-color: #48F3DB;
+}
+
+#editSessionModal .header-duplicate {
+  display: none;
+}
+
+#editSessionModal form {
+  text-align: left;
+}
+
+#editSessionModal .modal-body .container-duplicate {
+  padding-top: 0;
+}
+
+#editSessionModal label {
+  color: black;
 }
