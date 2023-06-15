@@ -8,10 +8,6 @@
 
     <%# SETS %>
     <% if sets.length > 0 %>
-      <%# CATEGORY %>
-        <% unless block.category.nil? || block.category.name.empty? %>
-          <p class="block-category"><%=block.category.name if block.category%></p>
-        <% end %>
       <%# SETS EXTENDED VIEW %>
       <%= render "partials/show/sets_extended_view", :block => block, :sets => sets %>
     <% end %>
@@ -39,20 +35,36 @@
       </div>
     </div>
 
-      <%# EDIT AND DESTROY BLOCK%>
-    <div class="block-controls">
-      <% if current_user == @session.user %>
-          <%# EDIT BLOCK %>
-          <a class="btn-delete purple-black" data-bs-toggle="modal" data-bs-target="#editBlockModal<%= block.id %>">
-            <i class="fa-solid fa-pen-to-square"></i> Edit
-          </a>
-          <%# EDIT BLOCK FORM %>
-          <%= render "partials/forms/edit_block_form", :block => block, :@session => @session %>
-          <%# DESTROY %>
-          <%= link_to session_block_path(@session, block.id),class: "btn-delete purple-black", data: { turbo_method: "delete", turbo_confirm: "Are you sure?" } do %>
-            <i class="fa-solid fa-trash-can"></i> Delete
-          <% end %>
+    <div class="block-footer">
+      <%# CATEGORY %>
+      <% unless block.category.nil? || block.category.name.empty? %>
+        <% if block.category.name == "Cardio" %>
+          <p class="block-category purple"><%=block.category.name%></p>
+        <% elsif block.category.name == "Mobility" %>
+          <p class="block-category red"><%=block.category.name%></p>
+        <% elsif block.category.name == "Strength" %>
+          <p class="block-category yellow"><%=block.category.name%></p>
+        <% else %>
+          <p class="block-category cyan"><%=block.category.name%></p>
+        <% end %>
       <% end %>
+
+      <%# EDIT AND DESTROY BLOCK%>
+      <div class="block-controls">
+
+        <% if current_user == @session.user %>
+            <%# EDIT BLOCK %>
+            <a class="btn-delete purple-black" data-bs-toggle="modal" data-bs-target="#editBlockModal<%= block.id %>">
+              <i class="fa-solid fa-pen-to-square"></i> Edit
+            </a>
+            <%# EDIT BLOCK FORM %>
+            <%= render "partials/forms/edit_block_form", :block => block, :@session => @session %>
+            <%# DESTROY %>
+            <%= link_to session_block_path(@session, block.id),class: "btn-delete purple-black", data: { turbo_method: "delete"} do %>
+              <i class="fa-solid fa-trash-can"></i> Delete
+            <% end %>
+        <% end %>
+      </div>
     </div>
 
 

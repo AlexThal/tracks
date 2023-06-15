@@ -1,7 +1,7 @@
 <div class = "block-header">
   <div class = "block-title-flex">
     <span class="block-number"><%= index + 1 %></span>
-    <li><%= block.name %></li>
+    <li><%= block.name.truncate(16) %></li>
   </div>
   <%= render "partials/show/sets_and_reps_overview", :block => block, :sets => sets %>
 </div>

@@ -1,6 +1,6 @@
 <div class="collapse sets-extended-view" id="collapseExample<%=block.id%>">
 
-  <% sets.reverse.each_with_index do |set, index| %>
+  <% sets.sort_by(&:created_at).each_with_index do |set, index| %>
   <%# SET INFO %>
     <div class="set-info">
       <%# SET NUMBER %>
@@ -21,7 +21,7 @@
         <% end %>
       </div>
       <%# DELETE SET %>
-      <%= link_to exercise_set_path(set),class: "btn-delete", data: { turbo_method: "delete", turbo_confirm: "Are you sure?" } do %>
+      <%= link_to exercise_set_path(set),class: "btn-delete", data: { turbo_method: "delete"} do %>
         <i class="fa-solid fa-xmark"></i>
       <% end %>
     </div>

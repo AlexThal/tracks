@@ -30,7 +30,7 @@ class ExerciseSessionsController < ApplicationController
   end
 
   def show
-    @blocks = @session.blocks
+    @blocks = @session.blocks.sort_by(&:created_at)
     @block = Block.new
     @set = ExerciseSet.new
   end
