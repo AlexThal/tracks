@@ -23,7 +23,9 @@
     </ul>
   </div>
   <div class="image-gradient"></div>
-  <%= image_tag(@session.photo, alt:"photo") %>
+  <% unless @session.photo.nil? %>
+    <%= image_tag(@session.photo, alt:"photo")%>
+  <% end %>
 </div>
 
 <ol class = "block-container">
