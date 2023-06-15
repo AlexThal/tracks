@@ -7,12 +7,11 @@
       <div class="modal-body">
         <%= simple_form_for([@session, @block]) do |f| %>
           <%= f.input :name, required: true %>
+          <%= f.association :category, required: false %>
           <%= f.input :note %>
           <%= f.input :gear %>
           <%= f.input :rest_between_sets %>
-          <%= f.input :custom_field %>
-          <%= f.submit 'Save', class: 'btn-main form-actions' %>
-          
+          <%= f.submit 'Save', class: 'btn-create form-actions' %>
         <% end %>
       </div>
     </div>
