@@ -1,6 +1,6 @@
 <div class="banner greeting-index">
   <%= link_to root_path, {:class=>"btn-back"} do%>
-    <i class="fa-solid fa-chevron-left"></i>
+  <i class="fa-solid fa-circle-arrow-left"></i>
   <% end %>
   <h1>Hi&nbsp;<%= current_user.username %><h1>
   <%= image_tag(current_user.photo, alt:"Your avatar", class:"avatar")  %>

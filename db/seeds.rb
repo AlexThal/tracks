@@ -95,12 +95,12 @@ puts "Creating sessions"
 
 sessions = [
   # Alex
-  { user: alex, title: "Sunny hike", sport: hiking, date: Date.new(2023, 6, 3), comment: "Tough hike, worth the view!", favourite: false, private: false, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686738044/TRACKS/hiker_Alex_rzilsz.jpg" },
-  { user: alex, title: "Hike hike baby!", sport: hiking, date: Date.new(2023, 6, 13), comment: "A good four hours of paddling", favourite: true, private: false, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686750397/TRACKS/001_hfjbcw.jpg" },
-  { user: alex, title: "Relaxed swim", sport: swimming, date: Date.new(2023, 6, 5), comment: "can you tell i'm relaxed?", favourite: false, private: true, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686750143/TRACKS/alex_unicorn_poolfloat_pem0ud.jpg" },
-  { user: alex, title: "Paddles down!", sport: standup, date: Date.new(2023, 6, 7), comment: "This one really hit the sweet spot!", favourite: true, private: false, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686750143/TRACKS/Alex_standup_paddle_bu9nn5.jpg" },
-  { user: alex, title: "Abfahrt Ski", sport: skii, date: Date.new(2023, 6, 13), comment: "Hit all the slopes, day well spent", favourite: true, private: false, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686750924/TRACKS/011_amq0o5.jpg" },
   { user: alex, title: "Summer Paddle", sport: skii, date: Date.new(2023, 6, 13), comment: "A good four hours of paddling", favourite: true, private: false, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686749291/TRACKS/022_kfvyui.jpg" },
+  { user: alex, title: "Sunny hike", sport: hiking, date: Date.new(2023, 6, 3), comment: "Tough hike, worth the view!", favourite: false, private: false, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686738044/TRACKS/hiker_Alex_rzilsz.jpg" },
+  { user: alex, title: "Hike hike baby!", sport: hiking, date: Date.new(2023, 6, 13), comment: "Beautiful hike in Bariloche", favourite: true, private: false, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686750397/TRACKS/001_hfjbcw.jpg" },
+  { user: alex, title: "Relaxed swim", sport: swimming, date: Date.new(2023, 6, 5), comment: "Can you tell i'm relaxed?", favourite: false, private: true, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686750143/TRACKS/alex_unicorn_poolfloat_pem0ud.jpg" },
+  { user: alex, title: "Abfahrt Ski", sport: skii, date: Date.new(2023, 6, 13), comment: "Hit all the slopes, day well spent", favourite: true, private: false, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686750924/TRACKS/011_amq0o5.jpg" },
+  { user: alex, title: "Paddles down!", sport: standup, date: Date.new(2023, 6, 7), comment: "This one really hit the sweet spot!", favourite: true, private: false, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686750143/TRACKS/Alex_standup_paddle_bu9nn5.jpg" },
   # Amanda
   { user: amanda, title: "Backbend practice", sport: yoga, date: Date.new(2023, 6, 5), comment: "Backbends are to be felt more than expressed", favourite: false, private: true, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686738041/TRACKS/Amy_bow_viqflb.jpg"  },
   { user: amanda, title: "Cool swim", sport: swimming, date: Date.new(2023, 6, 10), comment: "Cool down swim", favourite: true, private: false, photo: "https://res.cloudinary.com/dg80u9uwm/image/upload/v1686738043/TRACKS/Amy_swim_kuiogd.jpg" },
