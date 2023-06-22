@@ -1,4 +1,4 @@
-.dash-card-equipment{
+.dash-card-equipment {
   display:flex;
   position: relative;
   font-size: 16px;
@@ -7,7 +7,7 @@
   margin-bottom: 16px;
   box-shadow: 0px 0px 8px #D3DEE3;
 }
-.dash-card-equipment img{
+.dash-card-equipment img {
   margin-right: 12px;
   height: 120px;
   width: 120px;
@@ -17,20 +17,8 @@
 .dash-card-equipment p {
   margin: 0;
 }
-.date-dash{
+.date-dash {
   color: #a09494;
   margin-top: 8px;
   font-size: 15px;
 }
-
-
-// For both cards (for now)
-// .card_details_dashboard{
-//   display:flex;
-//   justify-content: space-between;
-//   position: relative;
-//   font-size: 16px;
-//   // width: 200px;
-//   margin-top: 16px;
-//   margin-bottom: 16px;
-// }
